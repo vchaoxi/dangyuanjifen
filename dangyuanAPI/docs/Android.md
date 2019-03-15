@@ -222,10 +222,8 @@
     <img src="../docs/images/ENIMAGE1552116854250.jpg" width='300'>
 
 2. 点击未审核文件开始审核
-
-    <img src="../docs/images/ENIMAGE1552117048014.jpg" width='300'>
-
-    <img src="../docs/images/0 (27).jpg" width='300'>
+<img src="../docs/images/ENIMAGE1552117048014.jpg" width='300'>
+<img src="../docs/images/0 (27).jpg" width='300'>
 
 ####  个人信息
 
