@@ -222,15 +222,17 @@
     <img src="../docs/images/ENIMAGE1552116854250.jpg" width='300'>
 
 2. 点击未审核文件开始审核
-    <img src="../docs/images/ENIMAGE1552117048014.jpg" width='300'>
-    <img src="../docs/images/0 (27).jpg" width='300'>
+
+<img src="../docs/images/ENIMAGE1552117048014.jpg" width='300'>
+<img src="../docs/images/0 (27).jpg" width='300'>
 
 ####  个人信息
 
 
 1. 点击头像修改个人的基本信息；
-    <img src="../docs/images/ENIMAGE1552112233900.jpg" width='300'>
-    <img src="../docs/images/0 (22).jpg" width='300'>
+
+<img src="../docs/images/ENIMAGE1552112233900.jpg" width='300'>
+<img src="../docs/images/0 (22).jpg" width='300'>
 
 #### 我的设置
 
