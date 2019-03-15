@@ -1,0 +1,2574 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="None">
+  
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <title>党员积分API接口 - 党员积分使用手册</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "\u515a\u5458\u79ef\u5206API\u63a5\u53e3";
+    var mkdocs_page_input_path = "index.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="js/jquery-2.1.1.min.js" defer></script>
+  <script src="js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="." class="icon icon-home"> 党员积分使用手册</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href=".">党员积分API接口</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#_1">党员积分接口文档</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#_2">注册</a></li>
+        
+            <li><a class="toctree-l3" href="#_10">登录</a></li>
+        
+            <li><a class="toctree-l3" href="#_11">首页</a></li>
+        
+            <li><a class="toctree-l3" href="#_20">党员积分</a></li>
+        
+            <li><a class="toctree-l3" href="#_21">学习教育</a></li>
+        
+            <li><a class="toctree-l3" href="#-">我 - 模块</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="Android/">Abdroid版使用手册</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="iOS/">iOS版使用手册</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href=".">党员积分使用手册</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>党员积分API接口</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <div class="toc">
+<ul>
+<li><a href="#_1">党员积分接口文档</a><ul>
+<li><a href="#_2">注册</a><ul>
+<li><a href="#_3">核实党员身份信息是否有效</a></li>
+<li><a href="#_4">党内职务列表</a></li>
+<li><a href="#_5">党支部列表</a></li>
+<li><a href="#_6">党小组列表</a></li>
+<li><a href="#_7">核实党员联系方式有效性</a></li>
+<li><a href="#_8">短信验证码</a></li>
+<li><a href="#_9">注册</a></li>
+</ul>
+</li>
+<li><a href="#_10">登录</a><ul>
+<li><a href="#app">登录党员积分app</a></li>
+</ul>
+</li>
+<li><a href="#_11">首页</a><ul>
+<li><a href="#id">根据小组ID返回小组基本信息</a></li>
+<li><a href="#_12">近期安排列表</a></li>
+<li><a href="#_13">首页轮播图文章展示</a></li>
+<li><a href="#_14">党委工作计划列表</a></li>
+<li><a href="#_15">创建会议</a></li>
+<li><a href="#_16">获取当前会议参会人员列表</a></li>
+<li><a href="#_17">会议签到</a></li>
+<li><a href="#_18">全体人员会议签到状态</a></li>
+<li><a href="#_19">会议打分</a></li>
+</ul>
+</li>
+<li><a href="#_20">党员积分</a><ul>
+<li><a href="#1">接口简介1：党员积分列表</a></li>
+<li><a href="#2-">接口简介2：党员积分-排行榜</a></li>
+<li><a href="#3-">接口简介3：党员积分-排行榜-党支部列表</a></li>
+<li><a href="#4-">接口简介4：党员积分-积分审核</a></li>
+</ul>
+</li>
+<li><a href="#_21">学习教育</a><ul>
+<li><a href="#1-">接口简介1：学习教育-他山之石主页面</a></li>
+<li><a href="#2-_1">接口简介2：学习教育-风采展示</a></li>
+</ul>
+</li>
+<li><a href="#-">我 - 模块</a><ul>
+<li><a href="#_22">我的会议、我的活动</a></li>
+<li><a href="#_23">追加参会人员</a></li>
+<li><a href="#_24">删除参会人员</a></li>
+<li><a href="#_25">党员个人资料</a></li>
+<li><a href="#_26">党员个人积分详情</a></li>
+<li><a href="#_27">我的荣誉列表</a></li>
+<li><a href="#_28">签到</a></li>
+<li><a href="#_29">全体党员列表</a></li>
+<li><a href="#_30">会议请假申请</a></li>
+<li><a href="#_31">会议请假审批</a></li>
+<li><a href="#_32">添加荣誉</a></li>
+<li><a href="#_33">审核提交荣誉</a></li>
+<li><a href="#_34">修改密码</a></li>
+<li><a href="#_35">修改手机号</a></li>
+<li><a href="#_36">使用帮助</a></li>
+<li><a href="#_37">退出登录</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<h1 id="_1">党员积分接口文档</h1>
+<h2 id="_2">注册</h2>
+<h3 id="_3">核实党员身份信息是否有效</h3>
+<p>维护人员：刘浩</p>
+<p>接口详情：</p>
+<p>请求地址：http://192.168.5.122:5000/api/v1_0/users/check_m_valid</p>
+<p>请求类型：POST</p>
+<p>请求参数类型：application/x-www-form-urlencoded</p>
+<p>请求参数：</p>
+<table>
+<thead>
+<tr>
+<th align="center">参数名</th>
+<th align="center">参考值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">idnumber</td>
+<td align="center">410324199307112512</td>
+</tr>
+<tr>
+<td align="center">truename</td>
+<td align="center">刘浩</td>
+</tr>
+</tbody>
+</table>
+<p>返回值类型： application/json</p>
+<p>返回值示例：</p>
+<pre><code class="json">{
+    &quot;data&quot;: {
+        &quot;create_time&quot;: 1548144988,
+        &quot;id&quot;: 72,
+        &quot;idnumber&quot;: &quot;410324199307112512&quot;,
+        &quot;is_reged&quot;: 0,
+        &quot;status&quot;: 1,
+        &quot;truename&quot;: &quot;\u5218\u6d69&quot;
+    },
+    &quot;errmsg&quot;: &quot;\u6210\u5458\u6570\u636e\u53ef\u7528&quot;,
+    &quot;errno&quot;: &quot;1&quot;
+}
+</code></pre>
+
+<p>——————————————————————————————————————————————————————</p>
+<h3 id="_4">党内职务列表</h3>
+<p>维护人员：刘浩</p>
+<p>接口详情：</p>
+<p>请求地址：http://192.168.5.122:5000/api/v1_0/dangzhibu/dang_level</p>
+<p>请求类型：POST</p>
+<p>请求参数类型：application/x-www-form-urlencoded</p>
+<p>请求参数：无</p>
+<p>返回值类型：application/json</p>
+<p>返回值示例：</p>
+<pre><code class="json">{
+    &quot;data&quot;: {
+        &quot;10&quot;: &quot;\u666e\u901a\u515a\u5458&quot;,
+        &quot;20&quot;: &quot;\u515a\u5c0f\u7ec4\u957f&quot;,
+        &quot;30&quot;: &quot;\u515a\u652f\u90e8\u4e66\u8bb0&quot;,
+        &quot;40&quot;: &quot;\u515a\u59d4\u59d4\u5458&quot;,
+        &quot;50&quot;: &quot;\u515a\u59d4\u4e66\u8bb0&quot;
+    },
+    &quot;errmsg&quot;: &quot;\u6210\u529f&quot;,
+    &quot;errno&quot;: &quot;1&quot;
+}
+</code></pre>
+
+<p>———————————————————————————————————————————————————————</p>
+<h3 id="_5">党支部列表</h3>
+<p>维护人员：刘浩</p>
+<p>接口详情：</p>
+<p>请求地址：http://192.168.5.122:5000/api/v1_0/dangzhibu/</p>
+<p>请求类型：POST</p>
+<p>请求数据类型：application/x-www-form-urlencoded</p>
+<p>请求参数：无</p>
+<p>返回值类型：application/json</p>
+<p>返回值示例：</p>
+<pre><code class="json">{
+    &quot;data&quot;: {
+        &quot;10&quot;: &quot;\u529e\u516c\u5ba4\uff08\u515a\u59d4\u529e\u516c\u5ba4\uff09\u515a\u652f\u90e8&quot;,
+        &quot;100&quot;: &quot;\u515a\u59d4\u7ec4\u7ec7\u90e8\uff08\u4eba\u529b\u8d44\u6e90\u90e8\uff09\u515a\u652f\u90e8&quot;,
+        &quot;110&quot;: &quot;\u515a\u5efa\u5de5\u4f5c\u90e8\uff08\u5de5\u4f1a\u3001\u56e2\u59d4\uff09\u515a\u652f\u90e8&quot;,
+        &quot;120&quot;: &quot;\u76d1\u5bdf\u5ba1\u8ba1\u515a\u652f\u90e8&quot;,
+        &quot;130&quot;: &quot;\u8fd0\u8425\u76d1\u6d4b\u4e2d\u5fc3\u515a\u652f\u90e8&quot;,
+        &quot;140&quot;: &quot;\u7535\u529b\u8c03\u63a7\u4e2d\u5fc3\u515a\u652f\u90e8&quot;,
+        &quot;150&quot;: &quot;\u79bb\u9000\u4f11\u515a\u603b\u652f&quot;,
+        &quot;160&quot;: &quot;\u56fd\u7f51\u7518\u5dde\u533a\u4f9b\u7535\u516c\u53f8\u515a\u603b\u652f&quot;,
+        &quot;170&quot;: &quot;\u56fd\u7f51\u5c71\u4e39\u53bf\u4f9b\u7535\u516c\u53f8\u515a\u603b\u652f&quot;,
+        &quot;180&quot;: &quot;\u56fd\u7f51\u9ad8\u53f0\u53bf\u4f9b\u7535\u516c\u53f8\u515a\u603b\u652f&quot;,
+        &quot;190&quot;: &quot;\u7f51\u4e34\u6cfd\u53bf\u4f9b\u7535\u516c\u53f8\u515a\u603b\u652f&quot;,
+        &quot;20&quot;: &quot;\u53d1\u5c55\u7b56\u5212\u90e8\u515a\u652f\u90e8&quot;,
+        &quot;200&quot;: &quot;\u7ecf\u6d4e\u6280\u672f\u7814\u7a76\u6240\u515a\u652f\u90e8&quot;,
+        &quot;210&quot;: &quot;\u4fe1\u606f\u901a\u4fe1\u516c\u53f8\u515a\u652f\u90e8&quot;,
+        &quot;220&quot;: &quot;\u7269\u8d44\u4f9b\u5e94\u4e2d\u5fc3\u515a\u652f\u90e8&quot;,
+        &quot;230&quot;: &quot;\u7efc\u5408\u670d\u52a1\u4e2d\u5fc3\u515a\u652f\u90e8&quot;,
+        &quot;240&quot;: &quot;\u4e09\u65b0\u4f9b\u7535\u670d\u52a1\u4e2d\u5fc3\u515a\u652f\u90e8&quot;,
+        &quot;250&quot;: &quot;\u4f9b\u7535\u670d\u52a1\u4e2d\u5fc3\u515a\u652f\u90e8&quot;,
+        &quot;260&quot;: &quot;\u91d1\u6e90\u7535\u529b\u5de5\u7a0b\u516c\u53f8\u515a\u603b\u652f&quot;,
+        &quot;270&quot;: &quot;\u8f6f\u4ef6\u6d4b\u8bd5\u515a\u652f\u90e8&quot;,
+        &quot;30&quot;: &quot;\u8d22\u52a1\u8d22\u4ea7\u90e8\u515a\u652f\u90e8&quot;,
+        &quot;40&quot;: &quot;\u5b89\u5168\u76d1\u5bdf\u8d28\u91cf\u90e8\u515a\u652f\u90e8&quot;,
+        &quot;50&quot;: &quot;\u5efa\u8bbe\u90e8\u515a\u652f\u90e8&quot;,
+        &quot;60&quot;: &quot;\u8fd0\u7ef4\u68c0\u4fee\u90e8\u515a\u603b\u652f&quot;,
+        &quot;70&quot;: &quot;\u53d8\u7535\u8fd0\u68c0\u5ba4\u515a\u652f\u90e8&quot;,
+        &quot;80&quot;: &quot;\u8f93\u7535\u8fd0\u68c0\u5ba4\u515a\u652f\u90e8&quot;,
+        &quot;90&quot;: &quot;\u8425\u9500\u90e8\u515a\u652f\u90e8&quot;
+    },
+    &quot;errmsg&quot;: &quot;\u6210\u529f&quot;,
+    &quot;errno&quot;: &quot;1&quot;
+}
+</code></pre>
+
+<p>———————————————————————————————————————————————————————</p>
+<h3 id="_6">党小组列表</h3>
+<p>维护人员：刘浩</p>
+<p>接口详情：获取党员所在党支部的党小组列表</p>
+<p>请求地址：http://192.168.5.122:5000/api/v1_0/dangzhibu/dang_zu</p>
+<p>请求类型：POST</p>
+<p>请求参数类型：application/x-www-form-urlencoded</p>
+<p>请求参数：</p>
+<table>
+<thead>
+<tr>
+<th align="center">参数名</th>
+<th align="center">参考值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">dang_zid</td>
+<td align="center">270</td>
+</tr>
+</tbody>
+</table>
+<p>返回值类型：application/json</p>
+<p>返回值示例：</p>
+<pre><code class="json">{
+    &quot;data&quot;: [{
+        &quot;create_time&quot;: 1547985576,
+        &quot;dang_zid&quot;: 270,
+        &quot;id&quot;: 57,
+        &quot;leader&quot;: 0,
+        &quot;name&quot;: &quot;\u8f6f\u4ef6\u6d4b\u8bd5&quot;,
+        &quot;sort&quot;: 0,
+        &quot;status&quot;: 1
+    }],
+    &quot;errmsg&quot;: &quot;\u6210\u529f&quot;,
+    &quot;errno&quot;: &quot;1&quot;
+}
+</code></pre>
+
+<p>———————————————————————————————————————————————————————</p>
+<h3 id="_7">核实党员联系方式有效性</h3>
+<p>维护人员：刘浩</p>
+<p>接口详情：</p>
+<p>请求地址：http://192.168.5.122:5000/api/v1_0/users/check_mobile_valid</p>
+<p>请求类型：POST</p>
+<p>请求参数类型：application/x-www-form-urlencoded</p>
+<p>请求参数：</p>
+<table>
+<thead>
+<tr>
+<th align="center">参数名</th>
+<th align="center">参考值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">phonenum</td>
+<td align="center">17625701390</td>
+</tr>
+</tbody>
+</table>
+<p>返回值类型：application/json</p>
+<p>返回值示例：</p>
+<pre><code class="json">{
+    &quot;errmsg&quot;: &quot;\u624b\u673a\u53f7\u53ef\u4f7f\u7528&quot;,
+    &quot;errno&quot;: &quot;1&quot;
+}
+</code></pre>
+
+<p>———————————————————————————————————————————————————————</p>
+<h3 id="_8">短信验证码</h3>
+<p>维护人员：刘浩</p>
+<p>接口详情：</p>
+<p>请求地址：http://192.168.5.122:5000/api/v1_0/smsnotify</p>
+<p>请求类型：POST</p>
+<p>请求参数类型：application/x-www-form-urlencoded</p>
+<p>请求参数：</p>
+<table>
+<thead>
+<tr>
+<th align="center">参数名</th>
+<th align="center">参考值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">phonenum</td>
+<td align="center">17625701390</td>
+</tr>
+</tbody>
+</table>
+<p>返回值类型：application/json</p>
+<p>返回值示例：</p>
+<pre><code class="json">{
+    &quot;data&quot;: {
+        &quot;content&quot;: &quot;952528&quot;,
+        &quot;phone&quot;: &quot;17625701390&quot;
+    },
+    &quot;errmsg&quot;: &quot;\u77ed\u4fe1\u9a8c\u8bc1\u7801\u53d1\u9001\u6210\u529f&quot;,
+    &quot;errno&quot;: &quot;1&quot;
+}
+</code></pre>
+
+<p>———————————————————————————————————————————————————————</p>
+<h3 id="_9">注册</h3>
+<p>维护人员：刘浩</p>
+<p>接口详情：</p>
+<p>请求地址：http://192.168.5.122:5000/api/v1_0/users/register</p>
+<p>请求类型：POST</p>
+<p>请求参数类型：multipart/form-data</p>
+<p>请求参数：</p>
+<table>
+<thead>
+<tr>
+<th align="center">参数名</th>
+<th align="center">参考值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">avater</td>
+<td align="center">头像的二进制文件</td>
+</tr>
+<tr>
+<td align="center">dang_gid</td>
+<td align="center">57</td>
+</tr>
+<tr>
+<td align="center">dang_jointime</td>
+<td align="center">2019-03-08</td>
+</tr>
+<tr>
+<td align="center">dang_level</td>
+<td align="center">50</td>
+</tr>
+<tr>
+<td align="center">dang_zid</td>
+<td align="center">270</td>
+</tr>
+<tr>
+<td align="center">jiguan</td>
+<td align="center">郑州</td>
+</tr>
+<tr>
+<td align="center">madta</td>
+<td align="center">72</td>
+</tr>
+<tr>
+<td align="center">mingzu</td>
+<td align="center">汉</td>
+</tr>
+<tr>
+<td align="center">password</td>
+<td align="center">123456</td>
+</tr>
+<tr>
+<td align="center">phonenum</td>
+<td align="center">17625701390</td>
+</tr>
+<tr>
+<td align="center">sex</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">truename</td>
+<td align="center">刘浩</td>
+</tr>
+<tr>
+<td align="center">work_date</td>
+<td align="center">2019-03-08</td>
+</tr>
+<tr>
+<td align="center">work_gangwei</td>
+<td align="center">测试</td>
+</tr>
+<tr>
+<td align="center">work_xueli</td>
+<td align="center">本科</td>
+</tr>
+<tr>
+<td align="center">work_zhicheng</td>
+<td align="center">测试工程师</td>
+</tr>
+<tr>
+<td align="center">img</td>
+<td align="center">图片信息二进制文件</td>
+</tr>
+</tbody>
+</table>
+<p>返回值类型：application/json</p>
+<p>返回值示例：</p>
+<pre><code class="json">{
+    &quot;errmsg&quot;: &quot;\u6ce8\u518c\u6210\u529f&quot;,
+    &quot;errno&quot;: &quot;1&quot;
+}
+</code></pre>
+
+<p>————————————————————————————————————————</p>
+<h2 id="_10">登录</h2>
+<h3 id="app">登录党员积分app</h3>
+<p>维护人员：刘浩</p>
+<p>接口详情：</p>
+<p>请求地址：http://192.168.5.122:5000/api/v1_0/users/login</p>
+<p>请求类型：POST</p>
+<p>请求参数类型：application/x-www-form-urlencoded</p>
+<p>请求参数：</p>
+<table>
+<thead>
+<tr>
+<th align="center">参数名</th>
+<th align="center">参考值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">password</td>
+<td align="center">123456</td>
+</tr>
+<tr>
+<td align="center">phonenum</td>
+<td align="center">17625701390</td>
+</tr>
+</tbody>
+</table>
+<p>返回值类型：application/json</p>
+<p>返回值示例：</p>
+<pre><code class="json">{
+    &quot;errmsg&quot;: &quot;\u767b\u5f55\u6210\u529f&quot;,
+    &quot;errno&quot;: &quot;1&quot;,
+    &quot;info&quot;: {
+        &quot;act_permission&quot;: 0,
+        &quot;avatar&quot;: &quot;http://oldpic.vchaoxi.com/Fh4MEbGREf-6SllqZC7-9uOTaPa0&quot;,
+        &quot;dang_gid&quot;: 57,
+        &quot;dang_level&quot;: 50,
+        &quot;dang_zid&quot;: 270,
+        &quot;is_cyjf&quot;: 1,
+        &quot;is_dabwy&quot;: 0,
+        &quot;is_djgly&quot;: 0,
+        &quot;mobile&quot;: &quot;17625701390&quot;,
+        &quot;reg_time&quot;: 1552015594,
+        &quot;sex&quot;: 1,
+        &quot;status&quot;: 1,
+        &quot;token&quot;: &quot;MBkxvSBW7fq8jv73RuihuauA4Pu4YBAs&quot;,
+        &quot;truename&quot;: &quot;\u5218\u6d69&quot;,
+        &quot;uid&quot;: 634
+    }
+}
+</code></pre>
+
+<p>————————————————————————————————————————</p>
+<h2 id="_11">首页</h2>
+<h3 id="id">根据小组ID返回小组基本信息</h3>
+<p>维护人员：刘浩</p>
+<p>接口详情：</p>
+<p>请求地址：http://192.168.5.122:5000/api/v1_0/dangzhibu/zu_info</p>
+<p>请求类型：POST</p>
+<p>请求参数类型：application/x-www-form-urlencoded</p>
+<p>请求参数：</p>
+<table>
+<thead>
+<tr>
+<th align="center">参数名</th>
+<th align="center">参考值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">dang_gid</td>
+<td align="center">57</td>
+</tr>
+<tr>
+<td align="center">token</td>
+<td align="center">MBkxvSBW7fq8jv73RuihuauA4Pu4YBAs</td>
+</tr>
+</tbody>
+</table>
+<p>返回值类型：application/json</p>
+<p>返回值示例：</p>
+<pre><code class="json">{
+    &quot;data&quot;: {
+        &quot;create_time&quot;: 1547985576,
+        &quot;dang_zid&quot;: 270,
+        &quot;id&quot;: 57,
+        &quot;leader&quot;: 604,
+        &quot;name&quot;: &quot;\u8f6f\u4ef6\u6d4b\u8bd5&quot;,
+        &quot;sort&quot;: 0,
+        &quot;status&quot;: 1
+    },
+    &quot;errmsg&quot;: &quot;\u6210\u529f&quot;,
+    &quot;errno&quot;: &quot;1&quot;
+}
+</code></pre>
+
+<p>————————————————————————————————————————</p>
+<h3 id="_12">近期安排列表</h3>
+<p>维护人员：刘浩</p>
+<p>接口详情：获取会议和活动列表</p>
+<p>请求地址：http://192.168.5.122:5000/api/v1_0/activity/activity_list</p>
+<p>请求类型：POST</p>
+<p>请求参数类型：application/x-www-form-urlencoded</p>
+<p>请求参数：</p>
+<table>
+<thead>
+<tr>
+<th align="center">参数名</th>
+<th align="center">参考值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">is_index</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">is_mydang</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">token</td>
+<td align="center">MBkxvSBW7fq8jv73RuihuauA4Pu4YBAs</td>
+</tr>
+</tbody>
+</table>
+<p>返回值类型：application/json</p>
+<p>返回值示例：</p>
+<pre><code class="json">{
+    &quot;current_page&quot;: 1,
+    &quot;data&quot;: [{
+        &quot;begin_time&quot;: 1551949200,
+        &quot;cate_1&quot;: &quot;\u57f9\u8bad&quot;,
+        &quot;cate_2&quot;: &quot;&quot;,
+        &quot;cate_2_son&quot;: &quot;&quot;,
+        &quot;contact_mobile&quot;: &quot;17625701390&quot;,
+        &quot;contact_name&quot;: &quot;\u5218\u6d69&quot;,
+        &quot;create_time&quot;: 1551776559,
+        &quot;dang_zid&quot;: 270,
+        &quot;id&quot;: 356,
+        &quot;is_allin&quot;: 0,
+        &quot;location&quot;: &quot;123&quot;,
+        &quot;location_small&quot;: &quot;&quot;,
+        &quot;locx&quot;: &quot;&quot;,
+        &quot;locy&quot;: &quot;&quot;,
+        &quot;removes&quot;: &quot;&quot;,
+        &quot;schedule_id&quot;: &quot;&quot;,
+        &quot;title&quot;: &quot;\u57f9\u8bad&quot;,
+        &quot;type&quot;: 2,
+        &quot;uid&quot;: 579,
+        &quot;yaoqiu&quot;: &quot;321&quot;
+    }, {
+        &quot;begin_time&quot;: 1551938721,
+        &quot;cate_1&quot;: &quot;\u515a\u5c0f\u7ec4\u4f1a&quot;,
+        &quot;cate_2&quot;: &quot;&quot;,
+        &quot;cate_2_son&quot;: &quot;&quot;,
+        &quot;contact_mobile&quot;: &quot;18530071350&quot;,
+        &quot;contact_name&quot;: &quot;\u59dc\u6b22&quot;,
+        &quot;create_time&quot;: 1551765928,
+        &quot;dang_zid&quot;: 270,
+        &quot;id&quot;: 355,
+        &quot;is_allin&quot;: 0,
+        &quot;location&quot;: &quot;\u54c7\u997f\u5206111&quot;,
+        &quot;location_small&quot;: &quot;&quot;,
+        &quot;locx&quot;: &quot;&quot;,
+        &quot;locy&quot;: &quot;&quot;,
+        &quot;removes&quot;: &quot;&quot;,
+        &quot;schedule_id&quot;: &quot;&quot;,
+        &quot;title&quot;: &quot;\u5206&quot;,
+        &quot;type&quot;: 1,
+        &quot;uid&quot;: 629,
+        &quot;yaoqiu&quot;: &quot;\u5206\u54c7\u4e2a v&quot;
+    }, {
+        &quot;begin_time&quot;: 1551756008,
+        &quot;cate_1&quot;: &quot;\u515a\u5458\u4e2d\u5fc3\u7ec4\u7406\u8bba\u5b66\u4e60\u4f1a\u8bae&quot;,
+        &quot;cate_2&quot;: &quot;&quot;,
+        &quot;cate_2_son&quot;: &quot;&quot;,
+        &quot;contact_mobile&quot;: &quot;18530071350&quot;,
+        &quot;contact_name&quot;: &quot;\u59dc\u6b22&quot;,
+        &quot;create_time&quot;: 1551756013,
+        &quot;dang_zid&quot;: 270,
+        &quot;id&quot;: 343,
+        &quot;is_allin&quot;: 0,
+        &quot;location&quot;: &quot;\u5206&quot;,
+        &quot;location_small&quot;: &quot;&quot;,
+        &quot;locx&quot;: &quot;&quot;,
+        &quot;locy&quot;: &quot;&quot;,
+        &quot;removes&quot;: &quot;&quot;,
+        &quot;schedule_id&quot;: &quot;&quot;,
+        &quot;title&quot;: &quot;\u5206&quot;,
+        &quot;type&quot;: 1,
+        &quot;uid&quot;: 629,
+        &quot;yaoqiu&quot;: &quot;\u5206&quot;
+    }, {
+        &quot;begin_time&quot;: 1551755752,
+        &quot;cate_1&quot;: &quot;\u4f5c\u98ce\u5efa\u8bbe&quot;,
+        &quot;cate_2&quot;: &quot;&quot;,
+        &quot;cate_2_son&quot;: &quot;&quot;,
+        &quot;contact_mobile&quot;: &quot;17625701390&quot;,
+        &quot;contact_name&quot;: &quot;\u5218\u6d69&quot;,
+        &quot;create_time&quot;: 1551755756,
+        &quot;dang_zid&quot;: 270,
+        &quot;id&quot;: 342,
+        &quot;is_allin&quot;: 0,
+        &quot;location&quot;: &quot;\u8bf7\u95ee&quot;,
+        &quot;location_small&quot;: &quot;&quot;,
+        &quot;locx&quot;: &quot;&quot;,
+        &quot;locy&quot;: &quot;&quot;,
+        &quot;removes&quot;: &quot;&quot;,
+        &quot;schedule_id&quot;: &quot;&quot;,
+        &quot;title&quot;: &quot;\u8bf7\u95ee&quot;,
+        &quot;type&quot;: 2,
+        &quot;uid&quot;: 579,
+        &quot;yaoqiu&quot;: &quot;\u6c1b\u56f4&quot;
+    }],
+    &quot;errmsg&quot;: &quot;\u83b7\u53d6\u6570\u636e\u6210\u529f&quot;,
+    &quot;errno&quot;: &quot;1&quot;,
+    &quot;total_page&quot;: 10
+}
+</code></pre>
+
+<p>————————————————————————————————————————</p>
+<h3 id="_13">首页轮播图文章展示</h3>
+<p>维护人员：刘浩</p>
+<p>接口详情：</p>
+<p>请求地址：http://192.168.5.122:5000/api/v1_0/home/slider</p>
+<p>请求类型：POST</p>
+<p>请求参数类型：application/x-www-form-urlencoded</p>
+<p>请求参数：无</p>
+<p>返回值类型：application/json</p>
+<p>返回值示例：</p>
+<pre><code class="json">{
+    &quot;data&quot;: [{
+        &quot;create_time&quot;: 1469433395,
+        &quot;id&quot;: 62,
+        &quot;image&quot;: &quot;http://pic.vchaoxi.com/2017-05-23_5924038eb9f8d.png&quot;,
+        &quot;item_id&quot;: 5552,
+        &quot;level&quot;: 1,
+        &quot;title&quot;: &quot;\u9996\u98753&quot;
+    }, {
+        &quot;create_time&quot;: 1467879809,
+        &quot;id&quot;: 41,
+        &quot;image&quot;: &quot;http://pic.vchaoxi.com/2017-05-23_5924039a7954e.png&quot;,
+        &quot;item_id&quot;: 5553,
+        &quot;level&quot;: 1,
+        &quot;title&quot;: &quot;\u9996\u98752&quot;
+    }, {
+        &quot;create_time&quot;: 1467879794,
+        &quot;id&quot;: 40,
+        &quot;image&quot;: &quot;http://pic.vchaoxi.com/2017-05-23_592403a483ec4.png&quot;,
+        &quot;item_id&quot;: 5550,
+        &quot;level&quot;: 1,
+        &quot;title&quot;: &quot;\u9996\u98751&quot;
+    }],
+    &quot;errmsg&quot;: &quot;\u83b7\u53d6\u6210\u529f&quot;,
+    &quot;errno&quot;: &quot;1&quot;
+}
+</code></pre>
+
+<p>————————————————————————————————————————</p>
+<h3 id="_14">党委工作计划列表</h3>
+<p>维护人员：刘浩</p>
+<p>接口详情：</p>
+<p>请求地址：http://192.168.5.122:5000/api/v1_0/activity/plan_month</p>
+<p>请求类型：POST</p>
+<p>请求参数类型：application/x-www-form-urlencoded</p>
+<p>请求参数：无</p>
+<p>返回值类型：application/json</p>
+<p>返回值示例：</p>
+<pre><code class="json">{
+    &quot;data&quot;: [{
+        &quot;month&quot;: 4,
+        &quot;year&quot;: 2018
+    }, {
+        &quot;month&quot;: 6,
+        &quot;year&quot;: 2017
+    }, {
+        &quot;month&quot;: 5,
+        &quot;year&quot;: 2017
+    }, {
+        &quot;month&quot;: 4,
+        &quot;year&quot;: 2017
+    }],
+    &quot;errmsg&quot;: &quot;\u67e5\u8be2\u6210\u529f&quot;,
+    &quot;errno&quot;: &quot;1&quot;
+}
+</code></pre>
+
+<p>————————————————————————————————————————</p>
+<h3 id="_15">创建会议</h3>
+<p>维护人员：刘浩</p>
+<p>接口详情：</p>
+<p>请求地址：http://192.168.5.122:5000/api/v1_0/activity/add_activity</p>
+<p>请求类型：POST</p>
+<p>请求参数类型：application/x-www-form-urlencoded</p>
+<p>请求参数：</p>
+<table>
+<thead>
+<tr>
+<th align="center">参数名</th>
+<th align="center">参考值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">begin_time</td>
+<td align="center">1552035900</td>
+</tr>
+<tr>
+<td align="center">cate_1</td>
+<td align="center">支部党员大会</td>
+</tr>
+<tr>
+<td align="center">contact_mobile</td>
+<td align="center">17625701390</td>
+</tr>
+<tr>
+<td align="center">contact_name</td>
+<td align="center">刘浩</td>
+</tr>
+<tr>
+<td align="center">in_dang_zid</td>
+<td align="center">270</td>
+</tr>
+<tr>
+<td align="center">location</td>
+<td align="center">102会议室</td>
+</tr>
+<tr>
+<td align="center">title</td>
+<td align="center">测试</td>
+</tr>
+<tr>
+<td align="center">token</td>
+<td align="center">MBkxvSBW7fq8jv73RuihuauA4Pu4YBAs</td>
+</tr>
+<tr>
+<td align="center">type</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">yaoqiu</td>
+<td align="center">正装</td>
+</tr>
+</tbody>
+</table>
+<p>返回值类型：  application/x-www-form-urlencoded</p>
+<p>返回值示例：</p>
+<pre><code class="json">{
+    &quot;errmsg&quot;: &quot;\u6dfb\u52a0\u4f1a\u8bae\u6210\u529f&quot;,
+    &quot;errno&quot;: &quot;1&quot;
+}
+</code></pre>
+
+<p>————————————————————————————————————————</p>
+<h3 id="_16">获取当前会议参会人员列表</h3>
+<p>维护人员：刘浩</p>
+<p>接口详情：</p>
+<p>请求地址：http://192.168.5.122:5000/api/v1_0/activity/inmembers</p>
+<p>请求类型：POST</p>
+<p>请求参数类型：application/x-www-form-urlencoded</p>
+<p>请求参数：</p>
+<table>
+<thead>
+<tr>
+<th align="center">参数名</th>
+<th align="center">参考值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">act_id</td>
+<td align="center">357</td>
+</tr>
+<tr>
+<td align="center">token</td>
+<td align="center">MBkxvSBW7fq8jv73RuihuauA4Pu4YBAs</td>
+</tr>
+</tbody>
+</table>
+<p>返回值类型：application/json</p>
+<p>返回值示例：</p>
+<pre><code class="json">{
+    &quot;data&quot;: [{
+        &quot;avatar&quot;: &quot;http://oldpic.vchaoxi.com/2019-02-16_5c676b5330196.jpg&quot;,
+        &quot;truename&quot;: &quot;\u5180\u626c\u8fea&quot;,
+        &quot;uid&quot;: 581
+    }, {
+        &quot;avatar&quot;: &quot;http://oldpic.vchaoxi.com/2019-01-23_5c47eee97b6d9.jpg&quot;,
+        &quot;truename&quot;: &quot;\u590f\u57f9&quot;,
+        &quot;uid&quot;: 582
+    }, {
+        &quot;avatar&quot;: &quot;http://oldpic.vchaoxi.com/2019-02-21_5c6e639d3755f.jpg&quot;,
+        &quot;truename&quot;: &quot;\u738b\u94ed\u5fc3&quot;,
+        &quot;uid&quot;: 584
+    }, {
+        &quot;avatar&quot;: &quot;http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50&quot;,
+        &quot;truename&quot;: &quot;\u5bd2\u54f2\u4e3d&quot;,
+        &quot;uid&quot;: 523
+    }, {
+        &quot;avatar&quot;: &quot;http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50&quot;,
+        &quot;truename&quot;: &quot;\u8868\u4e91\u98de&quot;,
+        &quot;uid&quot;: 524
+    }, {
+        &quot;avatar&quot;: &quot;http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50&quot;,
+        &quot;truename&quot;: &quot;\u67f3\u82e5\u5170&quot;,
+        &quot;uid&quot;: 525
+    }, {
+        &quot;avatar&quot;: &quot;http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50&quot;,
+        &quot;truename&quot;: &quot;\u4e1c\u591c\u6625&quot;,
+        &quot;uid&quot;: 526
+    }, {
+        &quot;avatar&quot;: &quot;http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50&quot;,
+        &quot;truename&quot;: &quot;\u6bdb\u5f00\u8bda&quot;,
+        &quot;uid&quot;: 527
+    }, {
+        &quot;avatar&quot;: &quot;http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50&quot;,
+        &quot;truename&quot;: &quot;\u8303\u661f\u8fb0&quot;,
+        &quot;uid&quot;: 528
+    }, {
+        &quot;avatar&quot;: &quot;http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50&quot;,
+        &quot;truename&quot;: &quot;\u5409\u6653\u66fc&quot;,
+        &quot;uid&quot;: 529
+    }, {
+        &quot;avatar&quot;: &quot;http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50&quot;,
+        &quot;truename&quot;: &quot;\u4f9d\u4e00\u51e1&quot;,
+        &quot;uid&quot;: 530
+    }, {
+        &quot;avatar&quot;: &quot;http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50&quot;,
+        &quot;truename&quot;: &quot;\u6d82\u96ea\u73cd&quot;,
+        &quot;uid&quot;: 531
+    }, {
+        &quot;avatar&quot;: &quot;http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50&quot;,
+        &quot;truename&quot;: &quot;\u67ef\u831c\u831c&quot;,
+        &quot;uid&quot;: 532
+    }, {
+        &quot;avatar&quot;: &quot;http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50&quot;,
+        &quot;truename&quot;: &quot;\u6c5f\u82b3\u6da6&quot;,
+        &quot;uid&quot;: 533
+    }, {
+        &quot;avatar&quot;: &quot;http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50&quot;,
+        &quot;truename&quot;: &quot;\u6d0b\u4e66\u6587&quot;,
+        &quot;uid&quot;: 534
+    }, {
+        &quot;avatar&quot;: &quot;http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50&quot;,
+        &quot;truename&quot;: &quot;\u6c99\u590f\u67f3&quot;,
+        &quot;uid&quot;: 535
+    }, {
+        &quot;avatar&quot;: &quot;http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50&quot;,
+        &quot;truename&quot;: &quot;\u9646\u5bc4\u6587&quot;,
+        &quot;uid&quot;: 536
+    }, {
+        &quot;avatar&quot;: &quot;http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50&quot;,
+        &quot;truename&quot;: &quot;\u6842\u767d\u98ce&quot;,
+        &quot;uid&quot;: 537
+    }, {
+        &quot;avatar&quot;: &quot;http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50&quot;,
+        &quot;truename&quot;: &quot;\u5df4\u5143\u9f99&quot;,
+        &quot;uid&quot;: 538
+    }, {
+        &quot;avatar&quot;: &quot;http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50&quot;,
+        &quot;truename&quot;: &quot;\u53f0\u601d\u806a&quot;,
+        &quot;uid&quot;: 539
+    }, {
+        &quot;avatar&quot;: &quot;http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50&quot;,
+        &quot;truename&quot;: &quot;\u767d\u5c71\u5f64&quot;,
+        &quot;uid&quot;: 540
+    }, {
+        &quot;avatar&quot;: &quot;http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50&quot;,
+        &quot;truename&quot;: &quot;\u7f57\u5c14\u4e91&quot;,
+        &quot;uid&quot;: 541
+    }, {
+        &quot;avatar&quot;: &quot;http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50&quot;,
+        &quot;truename&quot;: &quot;\u4f59\u4e39\u7434&quot;,
+        &quot;uid&quot;: 542
+    }, {
+        &quot;avatar&quot;: &quot;http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50&quot;,
+        &quot;truename&quot;: &quot;\u5ba3\u4e91\u98de&quot;,
+        &quot;uid&quot;: 543
+    }, {
+        &quot;avatar&quot;: &quot;http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50&quot;,
+        &quot;truename&quot;: &quot;\u5e38\u7ff0\u6d77&quot;,
+        &quot;uid&quot;: 544
+    }, {
+        &quot;avatar&quot;: &quot;http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50&quot;,
+        &quot;truename&quot;: &quot;\u96f7\u6620\u5929&quot;,
+        &quot;uid&quot;: 545
+    }, {
+        &quot;avatar&quot;: &quot;http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50&quot;,
+        &quot;truename&quot;: &quot;\u53f2\u4e39\u4e91&quot;,
+        &quot;uid&quot;: 546
+    }, {
+        &quot;avatar&quot;: &quot;http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50&quot;,
+        &quot;truename&quot;: &quot;\u6b66\u624d\u54f2&quot;,
+        &quot;uid&quot;: 547
+    }, {
+        &quot;avatar&quot;: &quot;http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50&quot;,
+        &quot;truename&quot;: &quot;\u9648\u4e39\u7434&quot;,
+        &quot;uid&quot;: 548
+    }, {
+        &quot;avatar&quot;: &quot;http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50&quot;,
+        &quot;truename&quot;: &quot;\u6d2a\u4f1f\u535a&quot;,
+        &quot;uid&quot;: 549
+    }, {
+        &quot;avatar&quot;: &quot;http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50&quot;,
+        &quot;truename&quot;: &quot;\u626c\u98de\u5170&quot;,
+        &quot;uid&quot;: 550
+    }, {
+        &quot;avatar&quot;: &quot;http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50&quot;,
+        &quot;truename&quot;: &quot;\u8d1d\u82b8\u82b8&quot;,
+        &quot;uid&quot;: 551
+    }, {
+        &quot;avatar&quot;: &quot;http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50&quot;,
+        &quot;truename&quot;: &quot;\u817e\u73b2\u73b2&quot;,
+        &quot;uid&quot;: 552
+    }, {
+        &quot;avatar&quot;: &quot;http://pic-old.vchaoxi.com/2017-05-26_5927da1fb40ed.&quot;,
+        &quot;truename&quot;: &quot;\u5e38\u5b50\u660e&quot;,
+        &quot;uid&quot;: 563
+    }, {
+        &quot;avatar&quot;: &quot;http://pic-old.vchaoxi.com/2017-05-26_5927e118afc27.&quot;,
+        &quot;truename&quot;: &quot;\u4e91\u83f2&quot;,
+        &quot;uid&quot;: 564
+    }, {
+        &quot;avatar&quot;: &quot;http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50&quot;,
+        &quot;truename&quot;: &quot;\u674e\u91d1\u8d85&quot;,
+        &quot;uid&quot;: 565
+    }, {
+        &quot;avatar&quot;: &quot;http://pic-old.vchaoxi.com/2017-06-01_592fd99f8fd0f.jpg&quot;,
+        &quot;truename&quot;: &quot;\u5a04\u5ef6\u98de&quot;,
+        &quot;uid&quot;: 569
+    }, {
+        &quot;avatar&quot;: &quot;http://oldpic.vchaoxi.com/2019-02-23_5c70b148beacf.jpg&quot;,
+        &quot;truename&quot;: &quot;\u738b\u6657&quot;,
+        &quot;uid&quot;: 604
+    }, {
+        &quot;avatar&quot;: &quot;http://oldpic.vchaoxi.com/FhFqadQQVr6Q9pz-uaAKz2YTIIJL&quot;,
+        &quot;truename&quot;: &quot;\u5c24\u660e&quot;,
+        &quot;uid&quot;: 625
+    }, {
+        &quot;avatar&quot;: &quot;http://oldpic.vchaoxi.com/2019-02-25_5c737f54b834c.&quot;,
+        &quot;truename&quot;: &quot;\u59dc\u6b22&quot;,
+        &quot;uid&quot;: 629
+    }, {
+        &quot;avatar&quot;: &quot;http://oldpic.vchaoxi.com/FmMgF64R54C9ouc3VtvN-7eLkDom&quot;,
+        &quot;truename&quot;: &quot;\u59dc\u6b22&quot;,
+        &quot;uid&quot;: 630
+    }, {
+        &quot;avatar&quot;: &quot;http://oldpic.vchaoxi.com/2019-02-28_5c778f03dc256.&quot;,
+        &quot;truename&quot;: &quot;\u8def\u897f&quot;,
+        &quot;uid&quot;: 632
+    }, {
+        &quot;avatar&quot;: &quot;http://oldpic.vchaoxi.com/Fh4MEbGREf-6SllqZC7-9uOTaPa0&quot;,
+        &quot;truename&quot;: &quot;\u5218\u6d69&quot;,
+        &quot;uid&quot;: 634
+    }],
+    &quot;errmsg&quot;: &quot;\u67e5\u8be2\u6210\u529f&quot;,
+    &quot;errno&quot;: &quot;1&quot;
+}
+</code></pre>
+
+<p>——————————————————————————————————————</p>
+<h3 id="_17">会议签到</h3>
+<p>维护人员：刘浩</p>
+<p>接口详情：</p>
+<p>请求地址：http://192.168.5.122:5000/api/v1_0/activity/signin</p>
+<p>请求类型：POST</p>
+<p>请求参数类型：application/x-www-form-urlencoded</p>
+<p>请求参数：</p>
+<table>
+<thead>
+<tr>
+<th align="center">参数名</th>
+<th align="center">参考值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">act_id</td>
+<td align="center">357</td>
+</tr>
+<tr>
+<td align="center">token</td>
+<td align="center">MBkxvSBW7fq8jv73RuihuauA4Pu4YBAs</td>
+</tr>
+</tbody>
+</table>
+<p>返回值类型：application/json</p>
+<p>返回值示例：</p>
+<pre><code class="json">{
+    &quot;errmsg&quot;: &quot;\u7b7e\u5230\u6210\u529f&quot;,
+    &quot;errno&quot;: &quot;1&quot;
+}
+</code></pre>
+
+<p>————————————————————————————————————————</p>
+<h3 id="_18">全体人员会议签到状态</h3>
+<p>维护人员：刘浩</p>
+<p>接口详情：</p>
+<p>请求地址：http://192.168.5.122:5000/api/v1_0/activity/signed</p>
+<p>请求类型：POST</p>
+<p>请求参数类型：application/x-www-form-urlencoded</p>
+<p>请求参数：</p>
+<table>
+<thead>
+<tr>
+<th align="center">参数名</th>
+<th align="center">参考值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">act_id</td>
+<td align="center">357</td>
+</tr>
+<tr>
+<td align="center">token</td>
+<td align="center">MBkxvSBW7fq8jv73RuihuauA4Pu4YBAs</td>
+</tr>
+</tbody>
+</table>
+<p>返回值类型：application/json</p>
+<p>返回值示例：</p>
+<pre><code class="json">{
+    &quot;data&quot;: [{
+        &quot;act_id&quot;: 357,
+        &quot;create_time&quot;: 1552035275,
+        &quot;id&quot;: 90,
+        &quot;uid&quot;: 634
+    }],
+    &quot;errmsg&quot;: &quot;\u83b7\u53d6\u6210\u529f&quot;,
+    &quot;errno&quot;: &quot;1&quot;
+}
+</code></pre>
+
+<p>————————————————————————————————————————</p>
+<h3 id="_19">会议打分</h3>
+<p>维护人员：刘浩</p>
+<p>接口详情：</p>
+<p>请求地址：http://192.168.5.122:5000/api/v1_0/score/activity_grade</p>
+<p>请求类型：POST</p>
+<p>请求参数类型：multipart/form-data</p>
+<p>请求参数：</p>
+<table>
+<thead>
+<tr>
+<th align="center">参数名</th>
+<th align="center">参考值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">act_id</td>
+<td align="center">357</td>
+</tr>
+<tr>
+<td align="center">reason</td>
+<td align="center">签到</td>
+</tr>
+<tr>
+<td align="center">score</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">token</td>
+<td align="center">MBkxvSBW7fq8jv73RuihuauA4Pu4YBAs</td>
+</tr>
+<tr>
+<td align="center">uid</td>
+<td align="center">631</td>
+</tr>
+<tr>
+<td align="center">img</td>
+<td align="center">签到人员头像的二进制文件</td>
+</tr>
+</tbody>
+</table>
+<p>返回值类型： application/json</p>
+<p>返回值示例：</p>
+<pre><code class="json">{
+    &quot;errmsg&quot;: &quot;\u6253\u5206\u6210\u529f&quot;,
+    &quot;errno&quot;: &quot;1&quot;
+}
+</code></pre>
+
+<p>——————————————————————————————————————————————————————</p>
+<h2 id="_20">党员积分</h2>
+<h3 id="1">接口简介1：党员积分列表</h3>
+<p>维护人员：王晗
+请求地址：
+http://192.168.5.122:5000/api/v1_0/score/dang/members
+请求类型：
+POST
+请求参数类型：
+application/x-www-form-urlencoded
+请求参数：
+|   参数名   |参考值|
+| :-------- | --------:| :--: |
+|dang_zid | 270|
+|token  |u060FoiN5yxBEeSzwUNoTS9FG3ggN94Q|
+返回值类型：
+application/json
+返回值示例：</p>
+<pre><code class="json">{
+  &quot;data&quot;: [
+    {
+      &quot;id&quot;: 57, 
+      &quot;members&quot;: [
+        {
+          &quot;avatar&quot;: &quot;http://oldpic.vchaoxi.com/2019-02-16_5c676b5330196.jpg&quot;, 
+          &quot;is_cyjf&quot;: 1, 
+          &quot;mobile&quot;: &quot;13729923564&quot;, 
+          &quot;total_score&quot;: 0, 
+          &quot;truename&quot;: &quot;\u5180\u626c\u8fea&quot;, 
+          &quot;uid&quot;: 581, 
+          &quot;ydinfo&quot;: {
+            &quot;cdate&quot;: &quot;201903&quot;, 
+            &quot;score&quot;: 7.0, 
+            &quot;status&quot;: 0
+          }
+        }, 
+        {
+          &quot;avatar&quot;: &quot;http://oldpic.vchaoxi.com/2019-01-23_5c47eee97b6d9.jpg&quot;, 
+          &quot;is_cyjf&quot;: 1, 
+          &quot;mobile&quot;: &quot;17558829660&quot;, 
+          &quot;total_score&quot;: 0, 
+          &quot;truename&quot;: &quot;\u590f\u57f9&quot;, 
+          &quot;uid&quot;: 582
+        }, 
+        {
+          &quot;avatar&quot;: &quot;http://oldpic.vchaoxi.com/2019-02-28_5c778f03dc256.&quot;, 
+          &quot;is_cyjf&quot;: 1, 
+          &quot;mobile&quot;: &quot;18530071352&quot;, 
+          &quot;total_score&quot;: 23.0, 
+          &quot;truename&quot;: &quot;\u8def\u897f&quot;, 
+          &quot;uid&quot;: 632, 
+          &quot;ydinfo&quot;: {
+            &quot;cdate&quot;: &quot;201903&quot;, 
+            &quot;score&quot;: 23.0, 
+            &quot;status&quot;: 1
+          }
+        }
+      ], 
+      &quot;name&quot;: &quot;\u8f6f\u4ef6\u6d4b\u8bd5&quot;
+    }
+  ], 
+  &quot;errmsg&quot;: &quot;\u67e5\u8be2\u6210\u529f&quot;, 
+  &quot;errno&quot;: &quot;1&quot;
+}
+
+</code></pre>
+
+<h3 id="2-">接口简介2：党员积分-排行榜</h3>
+<p>维护人员：王晗
+请求地址：
+http://192.168.5.122:5000/api/v1_0/score/ranklist
+请求类型：
+POST
+请求参数类型：
+application/x-www-form-urlencoded
+请求参数：
+|   参数名   |参考值|
+| :-------- | --------:| :--: |
+|  month     |  3   |
+| token   |     u060FoiN5yxBEeSzwUNoTS9FG3ggN94Q  |
+|  year |   2019  |
+返回值类型：
+application/json 
+返回值示例：</p>
+<pre><code class="json">{
+    &quot;data&quot;: [{
+        &quot;total&quot;: 23.0,
+        &quot;uInfo&quot;: {
+            &quot;avatar&quot;: &quot;http://oldpic.vchaoxi.com/2019-02-28_5c778f03dc256.&quot;,
+            &quot;dang_gid&quot;: 57,
+            &quot;dang_level&quot;: 10,
+            &quot;dang_zid&quot;: 270,
+            &quot;is_cyjf&quot;: 1,
+            &quot;is_dabwy&quot;: 0,
+            &quot;is_djgly&quot;: 1,
+            &quot;mobile&quot;: &quot;18530071352&quot;,
+            &quot;reg_time&quot;: 1551339267,
+            &quot;sex&quot;: 1,
+            &quot;status&quot;: 1,
+            &quot;truename&quot;: &quot;\u8def\u897f&quot;,
+            &quot;uid&quot;: 632
+        },
+        &quot;uid&quot;: 632
+    }, {
+        &quot;total&quot;: 17.0,
+        &quot;uInfo&quot;: {
+            &quot;avatar&quot;: &quot;http://oldpic.vchaoxi.com/FmMgF64R54C9ouc3VtvN-7eLkDom&quot;,
+            &quot;dang_gid&quot;: 57,
+            &quot;dang_level&quot;: 10,
+            &quot;dang_zid&quot;: 270,
+            &quot;is_cyjf&quot;: 1,
+            &quot;is_dabwy&quot;: 0,
+            &quot;is_djgly&quot;: 0,
+            &quot;mobile&quot;: &quot;15201187510&quot;,
+            &quot;reg_time&quot;: 1551074530,
+            &quot;sex&quot;: 1,
+            &quot;status&quot;: 1,
+            &quot;truename&quot;: &quot;\u59dc\u6b22&quot;,
+            &quot;uid&quot;: 630
+        },
+        &quot;uid&quot;: 630
+    }, {
+        &quot;total&quot;: 12.0,
+        &quot;uInfo&quot;: {
+            &quot;avatar&quot;: &quot;http://oldpic.vchaoxi.com/2019-02-25_5c737f54b834c.&quot;,
+            &quot;dang_gid&quot;: 57,
+            &quot;dang_level&quot;: 20,
+            &quot;dang_zid&quot;: 270,
+            &quot;is_cyjf&quot;: 1,
+            &quot;is_dabwy&quot;: 0,
+            &quot;is_djgly&quot;: 0,
+            &quot;mobile&quot;: &quot;18530071350&quot;,
+            &quot;reg_time&quot;: 1551073108,
+            &quot;sex&quot;: 1,
+            &quot;status&quot;: 1,
+            &quot;truename&quot;: &quot;\u59dc\u6b22&quot;,
+            &quot;uid&quot;: 629
+        },
+        &quot;uid&quot;: 629
+    }],
+    &quot;errmsg&quot;: &quot;\u83b7\u53d6\u6210\u529f&quot;,
+    &quot;errno&quot;: &quot;1&quot;
+}
+</code></pre>
+
+<h3 id="3-">接口简介3：党员积分-排行榜-党支部列表</h3>
+<p>维护人员：王晗
+请求地址：
+http://192.168.5.122:5000/api/v1_0/score/ranklist
+请求类型：
+POST
+请求参数类型：
+application/x-www-form-urlencoded
+请求参数：
+|   参数名   |参考值|
+| :-------- | --------:| :--: |
+| dang_zid    |     270  |
+| month   | 3   |
+|  token     |  token   u060FoiN5yxBEeSzwUNoTS9FG3ggN94Q  |
+| year    |     2019  |
+返回值类型：
+application/json 
+返回值示例：</p>
+<pre><code class="json">{
+    &quot;data&quot;: [{
+        &quot;total&quot;: 23.0,
+        &quot;uInfo&quot;: {
+            &quot;avatar&quot;: &quot;http://oldpic.vchaoxi.com/2019-02-28_5c778f03dc256.&quot;,
+            &quot;dang_gid&quot;: 57,
+            &quot;dang_level&quot;: 10,
+            &quot;dang_zid&quot;: 270,
+            &quot;is_cyjf&quot;: 1,
+            &quot;is_dabwy&quot;: 0,
+            &quot;is_djgly&quot;: 1,
+            &quot;mobile&quot;: &quot;18530071352&quot;,
+            &quot;reg_time&quot;: 1551339267,
+            &quot;sex&quot;: 1,
+            &quot;status&quot;: 1,
+            &quot;truename&quot;: &quot;\u8def\u897f&quot;,
+            &quot;uid&quot;: 632
+        },
+        &quot;uid&quot;: 632
+    }, {
+        &quot;total&quot;: 17.0,
+        &quot;uInfo&quot;: {
+            &quot;avatar&quot;: &quot;http://oldpic.vchaoxi.com/FmMgF64R54C9ouc3VtvN-7eLkDom&quot;,
+            &quot;dang_gid&quot;: 57,
+            &quot;dang_level&quot;: 10,
+            &quot;dang_zid&quot;: 270,
+            &quot;is_cyjf&quot;: 1,
+            &quot;is_dabwy&quot;: 0,
+            &quot;is_djgly&quot;: 0,
+            &quot;mobile&quot;: &quot;15201187510&quot;,
+            &quot;reg_time&quot;: 1551074530,
+            &quot;sex&quot;: 1,
+            &quot;status&quot;: 1,
+            &quot;truename&quot;: &quot;\u59dc\u6b22&quot;,
+            &quot;uid&quot;: 630
+        },
+        &quot;uid&quot;: 630
+    }, {
+        &quot;total&quot;: 12.0,
+        &quot;uInfo&quot;: {
+            &quot;avatar&quot;: &quot;http://oldpic.vchaoxi.com/2019-02-25_5c737f54b834c.&quot;,
+            &quot;dang_gid&quot;: 57,
+            &quot;dang_level&quot;: 20,
+            &quot;dang_zid&quot;: 270,
+            &quot;is_cyjf&quot;: 1,
+            &quot;is_dabwy&quot;: 0,
+            &quot;is_djgly&quot;: 0,
+            &quot;mobile&quot;: &quot;18530071350&quot;,
+            &quot;reg_time&quot;: 1551073108,
+            &quot;sex&quot;: 1,
+            &quot;status&quot;: 1,
+            &quot;truename&quot;: &quot;\u59dc\u6b22&quot;,
+            &quot;uid&quot;: 629
+        },
+        &quot;uid&quot;: 629
+    }],
+    &quot;errmsg&quot;: &quot;\u83b7\u53d6\u6210\u529f&quot;,
+    &quot;errno&quot;: &quot;1&quot;
+}
+</code></pre>
+
+<h3 id="4-">接口简介4：党员积分-积分审核</h3>
+<p>维护人员：王晗
+请求地址：
+http://192.168.5.122:5000/api/v1_0/score/dang/members
+请求类型：
+POST
+请求参数类型：
+application/x-www-form-urlencoded
+请求参数：
+|   参数名   |参考值|
+| :-------- | --------:| :--: |
+| dang_zid    |     270  |
+| token   | u060FoiN5yxBEeSzwUNoTS9FG3ggN94Q   |</p>
+<p>返回值类型：
+application/json 
+返回值示例：</p>
+<pre><code class="python">{
+    &quot;data&quot;: [{
+        &quot;id&quot;: 57,
+        &quot;members&quot;: [{
+            &quot;avatar&quot;: &quot;http://oldpic.vchaoxi.com/2019-02-16_5c676b5330196.jpg&quot;,
+            &quot;is_cyjf&quot;: 1,
+            &quot;mobile&quot;: &quot;13729923564&quot;,
+            &quot;total_score&quot;: 0,
+            &quot;truename&quot;: &quot;\u5180\u626c\u8fea&quot;,
+            &quot;uid&quot;: 581,
+            &quot;ydinfo&quot;: {
+                &quot;cdate&quot;: &quot;201903&quot;,
+                &quot;score&quot;: 7.0,
+                &quot;status&quot;: 0
+            }
+        }, {
+            &quot;avatar&quot;: &quot;http://oldpic.vchaoxi.com/2019-01-23_5c47eee97b6d9.jpg&quot;,
+            &quot;is_cyjf&quot;: 1,
+            &quot;mobile&quot;: &quot;17558829660&quot;,
+            &quot;total_score&quot;: 0,
+            &quot;truename&quot;: &quot;\u590f\u57f9&quot;,
+            &quot;uid&quot;: 582
+        }, {
+            &quot;avatar&quot;: &quot;http://oldpic.vchaoxi.com/2019-02-21_5c6e639d3755f.jpg&quot;,
+            &quot;is_cyjf&quot;: 1,
+            &quot;mobile&quot;: &quot;15516155491&quot;,
+            &quot;total_score&quot;: 0,
+            &quot;truename&quot;: &quot;\u738b\u94ed\u5fc3&quot;,
+            &quot;uid&quot;: 584
+        },  {
+            &quot;avatar&quot;: &quot;http://oldpic.vchaoxi.com/Fh4MEbGREf-6SllqZC7-9uOTaPa0&quot;,
+            &quot;is_cyjf&quot;: 1,
+            &quot;mobile&quot;: &quot;17625701390&quot;,
+            &quot;total_score&quot;: 0,
+            &quot;truename&quot;: &quot;\u5218\u6d69&quot;,
+            &quot;uid&quot;: 634
+        }],
+        &quot;name&quot;: &quot;\u8f6f\u4ef6\u6d4b\u8bd5&quot;
+    }],
+    &quot;errmsg&quot;: &quot;\u67e5\u8be2\u6210\u529f&quot;,
+    &quot;errno&quot;: &quot;1&quot;
+}
+</code></pre>
+
+<p>——————————————————————————————————————————————————————</p>
+<h2 id="_21">学习教育</h2>
+<h3 id="1-">接口简介1：学习教育-他山之石主页面</h3>
+<p>维护人员：王晗
+请求地址：
+http://192.168.5.122:5000/api/v1_0/document/doc_list
+请求类型：
+POST
+请求参数类型：
+application/x-www-form-urlencoded
+请求参数：
+|   参数名   |参考值|
+| :-------- | --------:| :--: |
+| page    | 1 |
+| token  | u060FoiN5yxBEeSzwUNoTS9FG3ggN94Q  |
+|  type |  1 |
+返回值类型：
+application/json 
+返回值示例：</p>
+<pre><code class="json">{
+    &quot;current_page&quot;: 1,
+    &quot;data&quot;: [
+        {
+            &quot;cover&quot;: &quot;http://192.168.5.117:5000/static/images/icon80@2x.png?imageMogr2/thumbnail/220x130!&quot;,
+            &quot;create_time&quot;: 1495762879,
+            &quot;description&quot;: &quot;暂无描述&quot;,
+            &quot;id&quot;: 6437,
+            &quot;title&quot;: &quot;“迎接十九大 做合格党员” 征文启事&quot;
+        },
+        {
+            &quot;cover&quot;: &quot;http://192.168.5.117:5000/static/images/icon80@2x.png?imageMogr2/thumbnail/220x130!&quot;,
+            &quot;create_time&quot;: 1495762819,
+            &quot;description&quot;: &quot;暂无描述&quot;,
+            &quot;id&quot;: 6436,
+            &quot;title&quot;: &quot;“供给侧结构性改革”故事应该这样讲&quot;
+        }
+    ],
+    &quot;errmsg&quot;: &quot;查询成功&quot;,
+    &quot;errno&quot;: &quot;1&quot;,
+    &quot;total_page&quot;: 1
+}
+</code></pre>
+
+<h3 id="2-_1">接口简介2：学习教育-风采展示</h3>
+<p>维护人员：王晗
+请求地址：
+http://192.168.5.122:5000/api/v1_0/document/doc_list
+请求类型：
+POST
+请求参数类型：
+application/x-www-form-urlencoded
+请求参数：
+|   参数名   |参考值|
+| :-------- | --------:| :--: |
+| page    | 1 |
+| token  | u060FoiN5yxBEeSzwUNoTS9FG3ggN94Q  |
+|  type |  2 |
+返回值类型：
+application/json 
+返回值示例：</p>
+<pre><code class="json">{
+    &quot;current_page&quot;: 1,
+    &quot;data&quot;: [
+        {
+            &quot;cover&quot;: &quot;http://192.168.5.117:5000/static/images/icon80@2x.png?imageMogr2/thumbnail/220x130!&quot;,
+            &quot;create_time&quot;: 1546909050,
+            &quot;description&quot;: &quot;ddd&quot;,
+            &quot;id&quot;: 6440,
+            &quot;title&quot;: &quot;今天天气不错&quot;
+        }
+    ],
+    &quot;errmsg&quot;: &quot;查询成功&quot;,
+    &quot;errno&quot;: &quot;1&quot;,
+    &quot;total_page&quot;: 1
+}
+</code></pre>
+
+<p>——————————————————————————————————————————————————————</p>
+<h2 id="-">我 - 模块</h2>
+<h3 id="_22">我的会议、我的活动</h3>
+<p>维护人员：刘浩</p>
+<p>接口详情：会议和活动只有一个参数不一样</p>
+<p>请求地址：http://192.168.5.127:5000/api/v1_0/activity/activity_list</p>
+<p>请求类型：POST</p>
+<p>请求参数类型：application/x-www-form-urlencoded</p>
+<p>请求参数：</p>
+<table>
+<thead>
+<tr>
+<th align="center">参数名</th>
+<th align="center">参考值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">is_mycreate</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">page</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">token</td>
+<td align="center">en3y7vQ1SaeHZ/TOw3Mj0vfqE8HPsgEH</td>
+</tr>
+<tr>
+<td align="center">type</td>
+<td align="center">1</td>
+</tr>
+</tbody>
+</table>
+<p>返回值类型：application/json</p>
+<p>返回值示例：</p>
+<pre><code class="json">{
+    &quot;current_page&quot;: 1,
+    &quot;data&quot;: [{
+        &quot;begin_time&quot;: 1552035900,
+        &quot;cate_1&quot;: &quot;\u652f\u90e8\u515a\u5458\u5927\u4f1a&quot;,
+        &quot;cate_2&quot;: &quot;&quot;,
+        &quot;cate_2_son&quot;: &quot;&quot;,
+        &quot;contact_mobile&quot;: &quot;17625701390&quot;,
+        &quot;contact_name&quot;: &quot;\u5218\u6d69&quot;,
+        &quot;create_time&quot;: 1552032429,
+        &quot;dang_zid&quot;: 270,
+        &quot;id&quot;: 357,
+        &quot;is_allin&quot;: 0,
+        &quot;location&quot;: &quot;102\u4f1a\u8bae\u5ba4&quot;,
+        &quot;location_small&quot;: &quot;&quot;,
+        &quot;locx&quot;: &quot;&quot;,
+        &quot;locy&quot;: &quot;&quot;,
+        &quot;removes&quot;: &quot;&quot;,
+        &quot;schedule_id&quot;: &quot;&quot;,
+        &quot;title&quot;: &quot;\u6d4b\u8bd5&quot;,
+        &quot;type&quot;: 1,
+        &quot;uid&quot;: 634,
+        &quot;yaoqiu&quot;: &quot;\u6b63\u88c5&quot;
+    }],
+    &quot;errmsg&quot;: &quot;\u83b7\u53d6\u6570\u636e\u6210\u529f&quot;,
+    &quot;errno&quot;: &quot;1&quot;,
+    &quot;total_page&quot;: 1
+}
+</code></pre>
+
+<p>——————————————————————————————————————————————————————</p>
+<h3 id="_23">追加参会人员</h3>
+<p>维护人员：刘浩</p>
+<p>接口详情：</p>
+<p>请求地址：http://192.168.5.127:5000/api/v1_0/activity/addtomember</p>
+<p>请求类型：POST</p>
+<p>请求参数类型：application/x-www-form-urlencoded</p>
+<p>请求参数：</p>
+<table>
+<thead>
+<tr>
+<th align="center">参数名</th>
+<th align="center">参考值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">act_id</td>
+<td align="center">360</td>
+</tr>
+<tr>
+<td align="center">token</td>
+<td align="center">YO9enbbitaTTB3vjzcNo7q6pvUkZq5hn</td>
+</tr>
+<tr>
+<td align="center">uids</td>
+<td align="center">540</td>
+</tr>
+</tbody>
+</table>
+<p>返回值类型：application/json</p>
+<p>返回值示例：</p>
+<pre><code class="json">{
+    &quot;errmsg&quot;: &quot;\u8ffd\u52a0\u6210\u529f&quot;,
+    &quot;errno&quot;: &quot;1&quot;
+}
+</code></pre>
+
+<p>————————————————————————————————————————————————————</p>
+<h3 id="_24">删除参会人员</h3>
+<p>维护人员：刘浩</p>
+<p>接口详情：</p>
+<p>请求地址：http://192.168.5.127:5000/api/v1_0/activity/removemember</p>
+<p>请求类型：POST</p>
+<p>请求参数类型：application/x-www-form-urlencoded</p>
+<p>请求参数：</p>
+<table>
+<thead>
+<tr>
+<th align="center">参数名</th>
+<th align="center">参考值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">act_id</td>
+<td align="center">360</td>
+</tr>
+<tr>
+<td align="center">token</td>
+<td align="center">YO9enbbitaTTB3vjzcNo7q6pvUkZq5hn</td>
+</tr>
+<tr>
+<td align="center">uids</td>
+<td align="center">551</td>
+</tr>
+</tbody>
+</table>
+<p>返回值类型：application/json</p>
+<p>返回值示例：</p>
+<pre><code class="json">
+{
+    &quot;errmsg&quot;: &quot;\u5220\u9664\u6210\u529f&quot;,
+    &quot;errno&quot;: &quot;1&quot;
+}
+</code></pre>
+
+<p>————————————————————————————————————————————————————</p>
+<h3 id="_25">党员个人资料</h3>
+<p>维护人员：刘浩</p>
+<p>接口详情：</p>
+<p>请求地址：http://192.168.5.127:5000/api/v1_0/user/profile_detail</p>
+<p>请求类型：POST</p>
+<p>请求参数类型：application/x-www-form-urlencoded</p>
+<p>请求参数：</p>
+<table>
+<thead>
+<tr>
+<th align="center">参数名</th>
+<th align="center">参考值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">token</td>
+<td align="center">en3y7vQ1SaeHZ/TOw3Mj0vfqE8HPsgEH</td>
+</tr>
+</tbody>
+</table>
+<p>返回值类型：application/json</p>
+<p>返回值示例：</p>
+<pre><code class="json">{
+    &quot;data&quot;: {
+        &quot;avatar&quot;: &quot;http://oldpic.vchaoxi.com/Fh4MEbGREf-6SllqZC7-9uOTaPa0&quot;,
+        &quot;dang_gid&quot;: 57,
+        &quot;dang_jointime&quot;: &quot;2019-03-08&quot;,
+        &quot;dang_level&quot;: 50,
+        &quot;dang_zid&quot;: 270,
+        &quot;email&quot;: &quot;&quot;,
+        &quot;is_cyjf&quot;: 1,
+        &quot;is_djgly&quot;: 0,
+        &quot;is_dzbwy&quot;: 0,
+        &quot;jiguan&quot;: &quot;\u90d1\u5dde&quot;,
+        &quot;last_active_time&quot;: 1552015594,
+        &quot;last_login_ip&quot;: 0,
+        &quot;last_login_time&quot;: 0,
+        &quot;login&quot;: 0,
+        &quot;mingzu&quot;: &quot;\u6c49&quot;,
+        &quot;mobile&quot;: &quot;17625701390&quot;,
+        &quot;nickname&quot;: &quot;\u5218\u6d69&quot;,
+        &quot;reg_ip&quot;: 192168,
+        &quot;reg_time&quot;: 1552015594,
+        &quot;sex&quot;: 1,
+        &quot;status&quot;: 1,
+        &quot;truename&quot;: &quot;\u5218\u6d69&quot;,
+        &quot;type&quot;: 1,
+        &quot;uid&quot;: 634,
+        &quot;work_date&quot;: &quot;2019-03-08&quot;,
+        &quot;work_gangwei&quot;: &quot;\u6d4b\u8bd5&quot;,
+        &quot;work_xueli&quot;: &quot;\u672c\u79d1&quot;,
+        &quot;work_zhicheng&quot;: &quot;\u6d4b\u8bd5\u5de5\u7a0b\u5e08&quot;,
+        &quot;zu_title&quot;: &quot;\u8f6f\u4ef6\u6d4b\u8bd5&quot;
+    },
+    &quot;errmsg&quot;: &quot;\u67e5\u8be2\u6210\u529f&quot;,
+    &quot;errno&quot;: &quot;1&quot;
+}
+</code></pre>
+
+<p>———————————————————————————————————————————————————————</p>
+<h3 id="_26">党员个人积分详情</h3>
+<p>维护人员：刘浩</p>
+<p>接口详情：</p>
+<p>请求地址：http://192.168.5.127:5000/api/v1_0/user/myscore_info</p>
+<p>请求类型：POST</p>
+<p>请求参数类型：application/x-www-form-urlencoded</p>
+<p>请求参数：</p>
+<table>
+<thead>
+<tr>
+<th align="center">参数名</th>
+<th align="center">参考值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">token</td>
+<td align="center">en3y7vQ1SaeHZ/TOw3Mj0vfqE8HPsgEH</td>
+</tr>
+</tbody>
+</table>
+<p>返回值类型：application/json</p>
+<p>返回值示例：</p>
+<pre><code class="json">{
+    &quot;data&quot;: {
+        &quot;is_signed&quot;: 1,
+        &quot;rank&quot;: 6,
+        &quot;score&quot;: 0.5,
+        &quot;signin_days&quot;: 1
+    },
+    &quot;errmsg&quot;: &quot;\u83b7\u53d6\u6210\u529f&quot;,
+    &quot;errno&quot;: &quot;1&quot;
+}
+</code></pre>
+
+<p>——————————————————————————————————————————————————————</p>
+<h3 id="_27">我的荣誉列表</h3>
+<p>维护人员：刘浩</p>
+<p>接口详情：</p>
+<p>请求地址：http://192.168.5.127:5000/api/v1_0/user/myhonor</p>
+<p>请求类型：POST</p>
+<p>请求参数类型：application/x-www-form-urlencoded</p>
+<p>请求参数：</p>
+<table>
+<thead>
+<tr>
+<th align="center">参数名</th>
+<th align="center">参考值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">page</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">token</td>
+<td align="center">en3y7vQ1SaeHZ/TOw3Mj0vfqE8HPsgEH</td>
+</tr>
+</tbody>
+</table>
+<p>返回值类型：application/json</p>
+<p>返回值示例：</p>
+<pre><code class="json">{
+    &quot;current_page&quot;: 1,
+    &quot;data&quot;: [{
+        &quot;audit_time&quot;: 0,
+        &quot;audit_uid&quot;: 635,
+        &quot;beizhu&quot;: &quot;\u4e0a\u4f20\u8d44\u6599&quot;,
+        &quot;create_time&quot;: 1552112445,
+        &quot;id&quot;: 128,
+        &quot;jigou_title&quot;: &quot;&quot;,
+        &quot;level&quot;: &quot;\u9ad8\u7ea7\u804c\u79f0&quot;,
+        &quot;pics&quot;: [
+            &quot;http://oldpic.vchaoxi.com/FoO-seQDBfypCeETBR0FeF8AfPwI&quot;],
+        &quot;status&quot;: 0,
+        &quot;title&quot;: &quot;\u9ad8\u7ea7\u804c\u79f0&quot;,
+        &quot;type&quot;: &quot;\u804c\u79f0&quot;,
+        &quot;uid&quot;: 634
+    }],
+    &quot;errmsg&quot;: &quot;\u83b7\u53d6\u6210\u529f&quot;,
+    &quot;errno&quot;: &quot;1&quot;,
+    &quot;total_page&quot;: 1
+}
+</code></pre>
+
+<p>———————————————————————————————————————————————————————</p>
+<h3 id="_28">签到</h3>
+<p>维护人员：刘浩</p>
+<p>接口详情：</p>
+<p>请求地址：http://192.168.5.127:5000/api/v1_0/user/day_signin</p>
+<p>请求类型：POST</p>
+<p>请求参数类型：application/x-www-form-urlencoded</p>
+<p>请求参数：</p>
+<table>
+<thead>
+<tr>
+<th align="center">参数名</th>
+<th align="center">参考值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">token</td>
+<td align="center">en3y7vQ1SaeHZ/TOw3Mj0vfqE8HPsgEH</td>
+</tr>
+</tbody>
+</table>
+<p>返回值类型：application/json</p>
+<p>返回值示例：</p>
+<pre><code class="json">{
+    &quot;errmsg&quot;: &quot;\u7b7e\u5230\u6210\u529f&quot;,
+    &quot;errno&quot;: &quot;1&quot;
+}
+</code></pre>
+
+<p>——————————————————————————————————————————————————————</p>
+<h3 id="_29">全体党员列表</h3>
+<p>维护人员：刘浩</p>
+<p>接口详情：</p>
+<p>请求地址：http://192.168.5.127:5000/api/v1_0/activity/members_list</p>
+<p>请求类型：POST</p>
+<p>请求参数类型：application/x-www-form-urlencoded</p>
+<p>请求参数：</p>
+<table>
+<thead>
+<tr>
+<th align="center">参数名</th>
+<th align="center">参考值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">token</td>
+<td align="center">YO9enbbitaTTB3vjzcNo7q6pvUkZq5hn</td>
+</tr>
+</tbody>
+</table>
+<p>返回值类型：application/json</p>
+<p>返回值示例：</p>
+<pre><code class="json">{
+    &quot;data&quot;: [{
+        &quot;dang_zid&quot;: 0,
+        &quot;is_cyjf&quot;: 0,
+        &quot;truename&quot;: &quot;&quot;,
+        &quot;uid&quot;: 1
+    }, {
+        &quot;dang_zid&quot;: 250,
+        &quot;is_cyjf&quot;: 1,
+        &quot;truename&quot;: &quot;\u8def\u5a1f&quot;,
+        &quot;uid&quot;: 580
+    }, {
+        &quot;dang_zid&quot;: 270,
+        &quot;is_cyjf&quot;: 1,
+        &quot;truename&quot;: &quot;\u5180\u626c\u8fea&quot;,
+        &quot;uid&quot;: 581
+    }, {
+        &quot;dang_zid&quot;: 270,
+        &quot;is_cyjf&quot;: 1,
+        &quot;truename&quot;: &quot;\u590f\u57f9&quot;,
+        &quot;uid&quot;: 582
+    }, {
+        &quot;dang_zid&quot;: 270,
+        &quot;is_cyjf&quot;: 1,
+        &quot;truename&quot;: &quot;\u738b\u94ed\u5fc3&quot;,
+        &quot;uid&quot;: 584
+    }, {
+        &quot;dang_zid&quot;: 260,
+        &quot;is_cyjf&quot;: 1,
+        &quot;truename&quot;: &quot;\u5b63\u4f1f&quot;,
+        &quot;uid&quot;: 585
+    }, {
+        &quot;dang_zid&quot;: 210,
+        &quot;is_cyjf&quot;: 1,
+        &quot;truename&quot;: &quot;\u5218\u777f\u6377&quot;,
+        &quot;uid&quot;: 586
+    }, {
+        &quot;dang_zid&quot;: 210,
+        &quot;is_cyjf&quot;: 1,
+        &quot;truename&quot;: &quot;\u738b\u52c3\u7131&quot;,
+        &quot;uid&quot;: 587
+    }, {
+        &quot;dang_zid&quot;: 270,
+        &quot;is_cyjf&quot;: 1,
+        &quot;truename&quot;: &quot;\u5bd2\u54f2\u4e3d&quot;,
+        &quot;uid&quot;: 523
+    }, {
+        &quot;dang_zid&quot;: 270,
+        &quot;is_cyjf&quot;: 1,
+        &quot;truename&quot;: &quot;\u8868\u4e91\u98de&quot;,
+        &quot;uid&quot;: 524
+    }, {
+        &quot;dang_zid&quot;: 270,
+        &quot;is_cyjf&quot;: 1,
+        &quot;truename&quot;: &quot;\u67f3\u82e5\u5170&quot;,
+        &quot;uid&quot;: 525
+    }, {
+        &quot;dang_zid&quot;: 270,
+        &quot;is_cyjf&quot;: 1,
+        &quot;truename&quot;: &quot;\u4e1c\u591c\u6625&quot;,
+        &quot;uid&quot;: 526
+    }, {
+        &quot;dang_zid&quot;: 270,
+        &quot;is_cyjf&quot;: 1,
+        &quot;truename&quot;: &quot;\u6bdb\u5f00\u8bda&quot;,
+        &quot;uid&quot;: 527
+    }, {
+        &quot;dang_zid&quot;: 270,
+        &quot;is_cyjf&quot;: 1,
+        &quot;truename&quot;: &quot;\u8303\u661f\u8fb0&quot;,
+        &quot;uid&quot;: 528
+    }, {
+        &quot;dang_zid&quot;: 270,
+        &quot;is_cyjf&quot;: 1,
+        &quot;truename&quot;: &quot;\u5409\u6653\u66fc&quot;,
+        &quot;uid&quot;: 529
+    }, {
+        &quot;dang_zid&quot;: 270,
+        &quot;is_cyjf&quot;: 1,
+        &quot;truename&quot;: &quot;\u4f9d\u4e00\u51e1&quot;,
+        &quot;uid&quot;: 530
+    }, {
+        &quot;dang_zid&quot;: 270,
+        &quot;is_cyjf&quot;: 1,
+        &quot;truename&quot;: &quot;\u6d82\u96ea\u73cd&quot;,
+        &quot;uid&quot;: 531
+    }, {
+        &quot;dang_zid&quot;: 270,
+        &quot;is_cyjf&quot;: 1,
+        &quot;truename&quot;: &quot;\u67ef\u831c\u831c&quot;,
+        &quot;uid&quot;: 532
+    }, {
+        &quot;dang_zid&quot;: 270,
+        &quot;is_cyjf&quot;: 1,
+        &quot;truename&quot;: &quot;\u6c5f\u82b3\u6da6&quot;,
+        &quot;uid&quot;: 533
+    }, {
+        &quot;dang_zid&quot;: 270,
+        &quot;is_cyjf&quot;: 1,
+        &quot;truename&quot;: &quot;\u6d0b\u4e66\u6587&quot;,
+        &quot;uid&quot;: 534
+    }, {
+        &quot;dang_zid&quot;: 270,
+        &quot;is_cyjf&quot;: 1,
+        &quot;truename&quot;: &quot;\u6c99\u590f\u67f3&quot;,
+        &quot;uid&quot;: 535
+    }, {
+        &quot;dang_zid&quot;: 270,
+        &quot;is_cyjf&quot;: 1,
+        &quot;truename&quot;: &quot;\u9646\u5bc4\u6587&quot;,
+        &quot;uid&quot;: 536
+    }, {
+        &quot;dang_zid&quot;: 270,
+        &quot;is_cyjf&quot;: 1,
+        &quot;truename&quot;: &quot;\u6842\u767d\u98ce&quot;,
+        &quot;uid&quot;: 537
+    }, {
+        &quot;dang_zid&quot;: 270,
+        &quot;is_cyjf&quot;: 0,
+        &quot;truename&quot;: &quot;\u5df4\u5143\u9f99&quot;,
+        &quot;uid&quot;: 538
+    }, {
+        &quot;dang_zid&quot;: 270,
+        &quot;is_cyjf&quot;: 1,
+        &quot;truename&quot;: &quot;\u53f0\u601d\u806a&quot;,
+        &quot;uid&quot;: 539
+    }, {
+        &quot;dang_zid&quot;: 270,
+        &quot;is_cyjf&quot;: 1,
+        &quot;truename&quot;: &quot;\u767d\u5c71\u5f64&quot;,
+        &quot;uid&quot;: 540
+    }, {
+        &quot;dang_zid&quot;: 270,
+        &quot;is_cyjf&quot;: 1,
+        &quot;truename&quot;: &quot;\u7f57\u5c14\u4e91&quot;,
+        &quot;uid&quot;: 541
+    }, {
+        &quot;dang_zid&quot;: 270,
+        &quot;is_cyjf&quot;: 1,
+        &quot;truename&quot;: &quot;\u4f59\u4e39\u7434&quot;,
+        &quot;uid&quot;: 542
+    }, {
+        &quot;dang_zid&quot;: 270,
+        &quot;is_cyjf&quot;: 1,
+        &quot;truename&quot;: &quot;\u5ba3\u4e91\u98de&quot;,
+        &quot;uid&quot;: 543
+    }, {
+        &quot;dang_zid&quot;: 270,
+        &quot;is_cyjf&quot;: 1,
+        &quot;truename&quot;: &quot;\u5e38\u7ff0\u6d77&quot;,
+        &quot;uid&quot;: 544
+    }, {
+        &quot;dang_zid&quot;: 270,
+        &quot;is_cyjf&quot;: 1,
+        &quot;truename&quot;: &quot;\u96f7\u6620\u5929&quot;,
+        &quot;uid&quot;: 545
+    }, {
+        &quot;dang_zid&quot;: 270,
+        &quot;is_cyjf&quot;: 1,
+        &quot;truename&quot;: &quot;\u53f2\u4e39\u4e91&quot;,
+        &quot;uid&quot;: 546
+    }, {
+        &quot;dang_zid&quot;: 270,
+        &quot;is_cyjf&quot;: 1,
+        &quot;truename&quot;: &quot;\u6b66\u624d\u54f2&quot;,
+        &quot;uid&quot;: 547
+    }, {
+        &quot;dang_zid&quot;: 270,
+        &quot;is_cyjf&quot;: 1,
+        &quot;truename&quot;: &quot;\u9648\u4e39\u7434&quot;,
+        &quot;uid&quot;: 548
+    }, {
+        &quot;dang_zid&quot;: 270,
+        &quot;is_cyjf&quot;: 1,
+        &quot;truename&quot;: &quot;\u6d2a\u4f1f\u535a&quot;,
+        &quot;uid&quot;: 549
+    }, {
+        &quot;dang_zid&quot;: 270,
+        &quot;is_cyjf&quot;: 1,
+        &quot;truename&quot;: &quot;\u626c\u98de\u5170&quot;,
+        &quot;uid&quot;: 550
+    }, {
+        &quot;dang_zid&quot;: 270,
+        &quot;is_cyjf&quot;: 1,
+        &quot;truename&quot;: &quot;\u8d1d\u82b8\u82b8&quot;,
+        &quot;uid&quot;: 551
+    }, {
+        &quot;dang_zid&quot;: 270,
+        &quot;is_cyjf&quot;: 1,
+        &quot;truename&quot;: &quot;\u817e\u73b2\u73b2&quot;,
+        &quot;uid&quot;: 552
+    }, {
+        &quot;dang_zid&quot;: 210,
+        &quot;is_cyjf&quot;: 1,
+        &quot;truename&quot;: &quot;\u5f20\u6c38\u5b89&quot;,
+        &quot;uid&quot;: 591
+    }, {
+        &quot;dang_zid&quot;: 210,
+        &quot;is_cyjf&quot;: 1,
+        &quot;truename&quot;: &quot;\u5f20\u857e&quot;,
+        &quot;uid&quot;: 574
+    }, {
+        &quot;dang_zid&quot;: 210,
+        &quot;is_cyjf&quot;: 1,
+        &quot;truename&quot;: &quot;\u6768\u68e3&quot;,
+        &quot;uid&quot;: 575
+    }, {
+        &quot;dang_zid&quot;: 210,
+        &quot;is_cyjf&quot;: 1,
+        &quot;truename&quot;: &quot;\u9ec4\u6653\u7ea2&quot;,
+        &quot;uid&quot;: 576
+    }, {
+        &quot;dang_zid&quot;: 270,
+        &quot;is_cyjf&quot;: 1,
+        &quot;truename&quot;: &quot;\u5e38\u5b50\u660e&quot;,
+        &quot;uid&quot;: 563
+    }, {
+        &quot;dang_zid&quot;: 210,
+        &quot;is_cyjf&quot;: 1,
+        &quot;truename&quot;: &quot;\u90ed\u94f6\u82b3&quot;,
+        &quot;uid&quot;: 577
+    }, {
+        &quot;dang_zid&quot;: 270,
+        &quot;is_cyjf&quot;: 1,
+        &quot;truename&quot;: &quot;\u4e91\u83f2&quot;,
+        &quot;uid&quot;: 564
+    }, {
+        &quot;dang_zid&quot;: 270,
+        &quot;is_cyjf&quot;: 1,
+        &quot;truename&quot;: &quot;\u674e\u91d1\u8d85&quot;,
+        &quot;uid&quot;: 565
+    }, {
+        &quot;dang_zid&quot;: 250,
+        &quot;is_cyjf&quot;: 1,
+        &quot;truename&quot;: &quot;\u5415\u82b3\u5b81&quot;,
+        &quot;uid&quot;: 589
+    }, {
+        &quot;dang_zid&quot;: 250,
+        &quot;is_cyjf&quot;: 1,
+        &quot;truename&quot;: &quot;\u8521\u76fc&quot;,
+        &quot;uid&quot;: 578
+    }, {
+        &quot;dang_zid&quot;: 270,
+        &quot;is_cyjf&quot;: 1,
+        &quot;truename&quot;: &quot;\u5a04\u5ef6\u98de&quot;,
+        &quot;uid&quot;: 569
+    }, {
+        &quot;dang_zid&quot;: 250,
+        &quot;is_cyjf&quot;: 1,
+        &quot;truename&quot;: &quot;\u5f20\u660e&quot;,
+        &quot;uid&quot;: 592
+    }, {
+        &quot;dang_zid&quot;: 210,
+        &quot;is_cyjf&quot;: 1,
+        &quot;truename&quot;: &quot;\u8bb8\u65f8&quot;,
+        &quot;uid&quot;: 590
+    }, {
+        &quot;dang_zid&quot;: 270,
+        &quot;is_cyjf&quot;: 1,
+        &quot;truename&quot;: &quot;\u738b\u6657&quot;,
+        &quot;uid&quot;: 604
+    }, {
+        &quot;dang_zid&quot;: 210,
+        &quot;is_cyjf&quot;: 1,
+        &quot;truename&quot;: &quot;\u5434\u5c0f\u83b9&quot;,
+        &quot;uid&quot;: 588
+    }, {
+        &quot;dang_zid&quot;: 210,
+        &quot;is_cyjf&quot;: 1,
+        &quot;truename&quot;: &quot;\u767d\u4e07\u8363&quot;,
+        &quot;uid&quot;: 573
+    }, {
+        &quot;dang_zid&quot;: 250,
+        &quot;is_cyjf&quot;: 1,
+        &quot;truename&quot;: &quot;\u738b\u7434\u82b3&quot;,
+        &quot;uid&quot;: 593
+    }, {
+        &quot;dang_zid&quot;: 250,
+        &quot;is_cyjf&quot;: 1,
+        &quot;truename&quot;: &quot;\u5218\u5c0f\u971e&quot;,
+        &quot;uid&quot;: 594
+    }, {
+        &quot;dang_zid&quot;: 250,
+        &quot;is_cyjf&quot;: 1,
+        &quot;truename&quot;: &quot;\u6731\u5c0f\u9f99&quot;,
+        &quot;uid&quot;: 595
+    }, {
+        &quot;dang_zid&quot;: 90,
+        &quot;is_cyjf&quot;: 1,
+        &quot;truename&quot;: &quot;\u674e\u957f\u6d77&quot;,
+        &quot;uid&quot;: 596
+    }, {
+        &quot;dang_zid&quot;: 250,
+        &quot;is_cyjf&quot;: 1,
+        &quot;truename&quot;: &quot;\u674e\u4e66\u8bb0&quot;,
+        &quot;uid&quot;: 597
+    }, {
+        &quot;dang_zid&quot;: 270,
+        &quot;is_cyjf&quot;: 1,
+        &quot;truename&quot;: &quot;\u5c24\u660e&quot;,
+        &quot;uid&quot;: 625
+    }, {
+        &quot;dang_zid&quot;: 200,
+        &quot;is_cyjf&quot;: 1,
+        &quot;truename&quot;: &quot;\u59dc\u6b22&quot;,
+        &quot;uid&quot;: 633
+    }, {
+        &quot;dang_zid&quot;: 270,
+        &quot;is_cyjf&quot;: 1,
+        &quot;truename&quot;: &quot;\u59dc\u6b22&quot;,
+        &quot;uid&quot;: 629
+    }, {
+        &quot;dang_zid&quot;: 270,
+        &quot;is_cyjf&quot;: 1,
+        &quot;truename&quot;: &quot;\u59dc\u6b22&quot;,
+        &quot;uid&quot;: 630
+    }, {
+        &quot;dang_zid&quot;: 270,
+        &quot;is_cyjf&quot;: 1,
+        &quot;truename&quot;: &quot;\u8def\u897f&quot;,
+        &quot;uid&quot;: 632
+    }, {
+        &quot;dang_zid&quot;: 270,
+        &quot;is_cyjf&quot;: 1,
+        &quot;truename&quot;: &quot;\u5218\u6d69&quot;,
+        &quot;uid&quot;: 634
+    }, {
+        &quot;dang_zid&quot;: 270,
+        &quot;is_cyjf&quot;: 1,
+        &quot;truename&quot;: &quot;\u590f\u5929&quot;,
+        &quot;uid&quot;: 635
+    }],
+    &quot;errmsg&quot;: &quot;\u67e5\u8be2\u6210\u529f&quot;,
+    &quot;errno&quot;: &quot;1&quot;
+}
+</code></pre>
+
+<p>————————————————————————————————————————————————————</p>
+<h3 id="_30">会议请假申请</h3>
+<p>维护人员：刘浩</p>
+<p>接口详情：</p>
+<p>请求地址：http://192.168.5.127:5000/api/v1_0/activity/leave_request</p>
+<p>请求类型：POST</p>
+<p>请求参数类型：application/x-www-form-urlencoded</p>
+<p>请求参数：</p>
+<table>
+<thead>
+<tr>
+<th align="center">参数名</th>
+<th align="center">参考值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">token</td>
+<td align="center">en3y7vQ1SaeHZ/TOw3Mj0vfqE8HPsgEH</td>
+</tr>
+<tr>
+<td align="center">act_id</td>
+<td align="center">360</td>
+</tr>
+<tr>
+<td align="center">reason</td>
+<td align="center">不知道</td>
+</tr>
+</tbody>
+</table>
+<p>返回值类型：application/json</p>
+<p>返回值示例：</p>
+<pre><code class="json">{
+    &quot;errmsg&quot;: &quot;\u7533\u8bf7\u6210\u529f&quot;,
+    &quot;errno&quot;: &quot;1&quot;
+}
+</code></pre>
+
+<p>——————————————————————————————————————————————————-———</p>
+<h3 id="_31">会议请假审批</h3>
+<p>维护人员：刘浩</p>
+<p>接口详情：</p>
+<p>请求地址：http://192.168.5.127:5000/api/v1_0/activity/leave_approve</p>
+<p>请求类型：POST</p>
+<p>请求参数类型：application/x-www-form-urlencoded</p>
+<p>请求参数：</p>
+<table>
+<thead>
+<tr>
+<th align="center">参数名</th>
+<th align="center">参考值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">act_id</td>
+<td align="center">360</td>
+</tr>
+<tr>
+<td align="center">status</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">token</td>
+<td align="center">YO9enbbitaTTB3vjzcNo7q6pvUkZq5hn</td>
+</tr>
+<tr>
+<td align="center">uid</td>
+<td align="center">631</td>
+</tr>
+</tbody>
+</table>
+<p>返回值类型：application/json</p>
+<p>返回值示例：</p>
+<pre><code class="json">{
+    &quot;errmsg&quot;: &quot;\u5ba1\u6279\u6210\u529f&quot;,
+    &quot;errno&quot;: &quot;1&quot;
+}
+</code></pre>
+
+<p>————————————————————————————————————————————————————</p>
+<h3 id="_32">添加荣誉</h3>
+<p>维护人员：刘浩</p>
+<p>接口详情：</p>
+<p>请求地址：http://192.168.5.127:5000/api/v1_0/user/add_honor</p>
+<p>请求类型：POST</p>
+<p>请求参数类型：multipart/form-data</p>
+<p>请求参数：</p>
+<table>
+<thead>
+<tr>
+<th align="center">参数名</th>
+<th align="center">参考值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">beizhu</td>
+<td align="center">上传资料</td>
+</tr>
+<tr>
+<td align="center">level</td>
+<td align="center">高级职称</td>
+</tr>
+<tr>
+<td align="center">title</td>
+<td align="center">高级职称</td>
+</tr>
+<tr>
+<td align="center">token</td>
+<td align="center">en3y7vQ1SaeHZ/TOw3Mj0vfqE8HPsgEH</td>
+</tr>
+<tr>
+<td align="center">type</td>
+<td align="center">职称</td>
+</tr>
+<tr>
+<td align="center">img[]</td>
+<td align="center">资料的二进制文件</td>
+</tr>
+</tbody>
+</table>
+<p>返回值类型：application/json</p>
+<p>返回值示例：</p>
+<pre><code class="json">{
+    &quot;errmsg&quot;: &quot;\u6dfb\u52a0\u6210\u529f&quot;,
+    &quot;errno&quot;: &quot;1&quot;
+}
+</code></pre>
+
+<p>———————————————————————————————————————————————————————</p>
+<h3 id="_33">审核提交荣誉</h3>
+<p>维护人员：刘浩</p>
+<p>接口详情：</p>
+<p>请求地址：http://192.168.5.127:5000/api/v1_0/user/audit_honor_operation</p>
+<p>请求类型：POST</p>
+<p>请求参数类型：application/x-www-form-urlencoded</p>
+<p>请求参数：</p>
+<table>
+<thead>
+<tr>
+<th align="center">参数名</th>
+<th align="center">参考值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">honor_id</td>
+<td align="center">128</td>
+</tr>
+<tr>
+<td align="center">score</td>
+<td align="center">7</td>
+</tr>
+<tr>
+<td align="center">status</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">token</td>
+<td align="center">YO9enbbitaTTB3vjzcNo7q6pvUkZq5hn</td>
+</tr>
+</tbody>
+</table>
+<p>返回值类型：application/json</p>
+<p>返回值示例：</p>
+<pre><code class="json">{
+    &quot;errmsg&quot;: &quot;\u64cd\u4f5c\u6210\u529f&quot;,
+    &quot;errno&quot;: &quot;1&quot;
+}
+</code></pre>
+
+<p>———————————————————————————————————————————————————————</p>
+<h3 id="_34">修改密码</h3>
+<p>维护人员：刘浩</p>
+<p>接口详情：</p>
+<p>请求地址：http://192.168.5.127:5000/api/v1_0/user/change_password</p>
+<p>请求类型：POST</p>
+<p>请求参数类型：application/x-www-form-urlencoded</p>
+<p>请求参数：</p>
+<table>
+<thead>
+<tr>
+<th align="center">参数名</th>
+<th align="center">参考值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">old_pw</td>
+<td align="center">123456</td>
+</tr>
+<tr>
+<td align="center">replace_pw</td>
+<td align="center">098765</td>
+</tr>
+<tr>
+<td align="center">token</td>
+<td align="center">en3y7vQ1SaeHZ/TOw3Mj0vfqE8HPsgEH</td>
+</tr>
+</tbody>
+</table>
+<p>返回值类型：application/json</p>
+<p>返回值示例：</p>
+<pre><code class="json">{
+    &quot;errmsg&quot;: &quot;\u4fee\u6539\u6210\u529f&quot;,
+    &quot;errno&quot;: &quot;1&quot;
+}
+</code></pre>
+
+<p>————————————————————————————————————————————————-——————</p>
+<h3 id="_35">修改手机号</h3>
+<p>维护人员：刘浩</p>
+<p>接口详情：</p>
+<p>请求地址：http://192.168.5.127:5000/api/v1_0/user/change_mobile</p>
+<p>请求类型：POST</p>
+<p>请求参数类型：application/x-www-form-urlencoded</p>
+<p>请求参数：</p>
+<table>
+<thead>
+<tr>
+<th align="center">参数名</th>
+<th align="center">参考值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">mobile</td>
+<td align="center">17748656010</td>
+</tr>
+<tr>
+<td align="center">token</td>
+<td align="center">en3y7vQ1SaeHZ/TOw3Mj0vfqE8HPsgEH</td>
+</tr>
+</tbody>
+</table>
+<p>返回值类型：application/json</p>
+<p>返回值示例：</p>
+<pre><code class="json">{
+    &quot;errmsg&quot;: &quot;\u4fee\u6539\u6210\u529f&quot;,
+    &quot;errno&quot;: &quot;1&quot;
+}
+</code></pre>
+
+<p>————————————————————————————————————————————————————</p>
+<h3 id="_36">使用帮助</h3>
+<p>维护人员：刘浩</p>
+<p>接口详情：</p>
+<p>请求地址：http://192.168.5.127:5000/api/v1_0/user/help_document</p>
+<p>请求类型：POST</p>
+<p>请求参数类型：application/x-www-form-urlencoded</p>
+<p>请求参数：</p>
+<table>
+<thead>
+<tr>
+<th align="center">参数名</th>
+<th align="center">参考值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">type</td>
+<td align="center">ios</td>
+</tr>
+</tbody>
+</table>
+<p>返回值类型：application/json</p>
+<p>返回值示例：</p>
+<pre><code class="json">{
+    &quot;data&quot;: &quot;http://elec.vchaoxi.com/ios_read.html&quot;,
+    &quot;errmsg&quot;: &quot;\u83b7\u53d6\u6210\u529f&quot;,
+    &quot;errno&quot;: &quot;1&quot;
+}
+</code></pre>
+
+<p>——————————————————————————————————————————————————————</p>
+<h3 id="_37">退出登录</h3>
+<p>维护人员：刘浩</p>
+<p>接口详情：</p>
+<p>请求地址：http://192.168.5.127:5000/api/v1_0/user/logout</p>
+<p>请求类型：POST</p>
+<p>请求参数类型：application/x-www-form-urlencoded</p>
+<p>请求参数：</p>
+<table>
+<thead>
+<tr>
+<th align="center">参数名</th>
+<th align="center">参考值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">token</td>
+<td align="center">en3y7vQ1SaeHZ/TOw3Mj0vfqE8HPsgEH</td>
+</tr>
+</tbody>
+</table>
+<p>返回值类型：application/json</p>
+<p>返回值示例：</p>
+<pre><code class="json">{
+    &quot;errmsg&quot;: &quot;\u9000\u51fa\u767b\u5f55\u6210\u529f&quot;,
+    &quot;errno&quot;: &quot;1&quot;
+}
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Android/" class="btn btn-neutral float-right" title="Abdroid版使用手册">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+        <span style="margin-left: 15px"><a href="Android/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="js/theme.js" defer></script>
+      <script src="search/main.js" defer></script>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 1.0.4
+Build Date UTC : 2019-03-15 02:36:10
+-->
