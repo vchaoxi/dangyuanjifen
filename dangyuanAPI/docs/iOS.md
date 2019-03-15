@@ -7,8 +7,7 @@
 ## 一、下载安装说明
 
 **客户端可以在苹果应用商店（App Store）中搜索关键字“党员积分”，点击第一个 APP 下载安装即可，如下所示：** 
-
-    <img src="../docs/images/1.jpg" width='300'>
+<img src="../docs/images/1.jpg" width='300'>
 
 
 ## 二、用户登录注册
@@ -90,10 +89,8 @@
 
 2. 
 由每个小组组长每月对成员进行打分。
-
-    <img src="../docs/images/15.jpg" width='300'>
-
-    <img src="../docs/images/16.jpg" width='300'>
+<img src="../docs/images/15.jpg" width='300'>
+<img src="../docs/images/16.jpg" width='300'>
 
 3. 党小组长打分过后，由党支部书记对打分结果进行审核。
 
@@ -131,7 +128,7 @@
 1. 
 不同级别的人模块是不一样的，小组长及以下的人界面如图所示，只能查看支部积分；
 
-    <img src="../docs/images/25.jpg" width='300'>
+<img src="../docs/images/25.jpg" width='300'>
 
 2. 党支部书记模块首页上半部分可进行支部自评以及上传佐证材料的操作，下半部分是每个季度各个支部的得分情况；
 
@@ -139,10 +136,8 @@
 
 3. 
 点击右上角排行榜，选中党支部列表自己所属的党支部，查看支部内部排行情况。
-
-    <img src="../docs/images/27.jpg" width='300'>
-
-    <img src="../docs/images/28.jpg" width='300'>
+<img src="../docs/images/27.jpg" width='300'>
+<img src="../docs/images/28.jpg" width='300'>
 
 ## 七、我模块
 
@@ -156,12 +151,9 @@
 
 2. 
 修改部分个人工作信息，点击头像所属部分，进入我的个人信息，点击右上角的笔来编辑个人信息。
-
-    <img src="../docs/images/30.jpg" width='300'>
-
-    <img src="../docs/images/31.jpg" width='300'>
-
-    <img src="../docs/images/32.jpg" width='300'>
+<img src="../docs/images/30.jpg" width='300'>
+<img src="../docs/images/31.jpg" width='300'>
+<img src="../docs/images/32.jpg" width='300'>
 
 ### 个人积分
 
