@@ -3,4 +3,4 @@
 
 可直接访问https://vchaoxi.github.io/dangyuanjifen/
 
-本地可查看dangyuanAPI/docs/
+本地可查看 `dangyuanAPI/docs/Android.md | iOS.md`
