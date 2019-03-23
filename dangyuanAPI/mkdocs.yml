@@ -1,5 +1,5 @@
 site_name: 党员积分使用手册
 theme: readthedocs
 pages: 
-- Abdroid版使用手册: index.md
+- Android版使用手册: index.md
 - iOS版使用手册: iOS.md
