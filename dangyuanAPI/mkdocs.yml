@@ -3,3 +3,4 @@ theme: readthedocs
 pages: 
 - Abdroid版使用手册: index.md
 - iOS版使用手册: iOS.md
+- 管理后台使用手册: manage.md
