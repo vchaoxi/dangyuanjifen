@@ -27,7 +27,7 @@
 
 1. 月度计划新增：点击新增按钮，进入到新增页面;
 
-<img src="./images/dd161324-17d3-49fb-b3ca-4757140074fd 1.jpg" width='2000'/>
+<img src="./images/dd161324-17d3-49fb-b3ca-4757140074fd.jpg" width='2000'/>
 
 2. 填写月度计划日期，管理员输入“计划内容”选择计划是否启用后点击确定按钮，完成计划新增;
 
@@ -41,7 +41,7 @@
 
 <img src="./images/ENIMAGE1553246500430.jpg" width='2000'/>
 
-<img src="./images/a1cd9805-1fa0-4918-861b-5cca404de0be 1.jpg" width='2000'/>
+<img src="./images/a1cd9805-1fa0-4918-861b-5cca404de0be.jpg" width='2000'/>
 
 5. 删除月度计划，搜索删除的月度计划，点击删除，谨慎删除，点击删除系统立马删除；
 
@@ -69,7 +69,7 @@
 
 ## 三、用户管理
 
-<img src="./images/b49f3151-f2c5-4f5e-ab74-fe52ad505513 1.jpg" width='2000'/>
+<img src="./images/b49f3151-f2c5-4f5e-ab74-fe52ad505513.jpg" width='2000'/>
 
 #### APP用户
 
@@ -176,7 +176,7 @@
 
 <img src="./images/8d3b1472-df5f-4fab-a4f7-0a8217c5bc82.jpg" width='2000'/>
 
-<img src="./images/ca448f01-4397-4c45-85ce-e2d4332b52d0 1.jpg" width='2000'/>
+<img src="./images/ca448f01-4397-4c45-85ce-e2d4332b52d0.jpg" width='2000'/>
 
 3. 文档编辑，文档列表点击右侧“编辑”，可对文章进行再次编辑，编辑完成后通过点击下方“确定”按钮，进行编辑提交。
 
