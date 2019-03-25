@@ -17,17 +17,17 @@
 
 1. 点击功能管理，查看功能管理下所有内容；
 
-<img src="./406fd832-cbc1-4edd-95b1-4aab11f94a90.jpg" width='2000'/>
+<img src="./docs/images/406fd832-cbc1-4edd-95b1-4aab11f94a90.jpg" width='2000'/>
 
 2. 点击打开后，显示月度计划，积分日志，月度积分；
 
-<img src="./685b9898-573c-422e-ba44-ff0f0ccd1959.jpg" width='2000'/>
+<img src="./images/685b9898-573c-422e-ba44-ff0f0ccd1959.jpg" width='2000'/>
 
 #### 月度计划
 
 1. 月度计划新增：点击新增按钮，进入到新增页面;
 
-<img src="./dd161324-17d3-49fb-b3ca-4757140074fd 1.jpg" width='2000'/>
+<img src="../docs/images/dd161324-17d3-49fb-b3ca-4757140074fd 1.jpg" width='2000'/>
 
 2. 填写月度计划日期，管理员输入“计划内容”选择计划是否启用后点击确定按钮，完成计划新增;
 
